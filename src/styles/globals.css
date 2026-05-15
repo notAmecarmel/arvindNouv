@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap');
+
+:root {
+  /* Palette — warm ivories, deep slate, muted gold */
+  --ivory:        #F8F5F0;
+  --ivory-deep:   #EDE8E0;
+  --stone:        #D4CCB8;
+  --stone-mid:    #A89F8C;
+  --stone-dark:   #6B6358;
+  --slate:        #2C2C2A;
+  --slate-deep:   #1A1A18;
+  --gold:         #B8975A;
+  --gold-light:   #D4B47A;
+  --gold-pale:    #F0E8D4;
+  --white:        #FFFFFF;
+  --text-primary: #1A1A18;
+  --text-secondary: #6B6358;
+  --text-muted:   #A89F8C;
+
+  /* Typography */
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-serif:   'Cormorant Garamond', Georgia, serif;
+  --font-sans:    'Jost', 'Helvetica Neue', sans-serif;
+
+  /* Spacing scale */
+  --space-xs:  0.5rem;
+  --space-sm:  1rem;
+  --space-md:  2rem;
+  --space-lg:  4rem;
+  --space-xl:  6rem;
+  --space-2xl: 10rem;
+
+  /* Transitions */
+  --ease-luxury: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-enter:  cubic-bezier(0.0, 0.0, 0.2, 1);
+  --transition-base: 0.4s var(--ease-luxury);
+
+  /* Shadows */
+  --shadow-sm:  0 2px 12px rgba(28,28,24,0.06);
+  --shadow-md:  0 8px 40px rgba(28,28,24,0.10);
+  --shadow-lg:  0 20px 80px rgba(28,28,24,0.14);
+  --shadow-gold: 0 4px 24px rgba(184,151,90,0.18);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--ivory);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* ── Typography System ── */
+.t-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.t-serif {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  line-height: 1.3;
+}
+
+.t-sans {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.t-label {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ── Layout Utilities ── */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+.container--narrow {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+.section {
+  padding: var(--space-xl) 0;
+}
+
+.section--lg {
+  padding: var(--space-2xl) 0;
+}
+
+/* ── Divider ── */
+.divider-gold {
+  width: 48px;
+  height: 1px;
+  background: var(--gold);
+  display: block;
+}
+
+/* ── Gold Accent Line ── */
+.accent-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.accent-line::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--gold);
+}
+
+/* ── Button System ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 2rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  transition: all var(--transition-base);
+  text-decoration: none;
+}
+
+.btn--primary {
+  background: var(--slate-deep);
+  color: var(--ivory);
+}
+
+.btn--primary:hover {
+  background: var(--gold);
+  color: var(--white);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-gold);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--slate);
+  border: 1px solid var(--stone);
+}
+
+.btn--outline:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.btn--gold {
+  background: var(--gold);
+  color: var(--white);
+}
+
+.btn--gold:hover {
+  background: var(--slate-deep);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ── Image Placeholders ── */
+.img-placeholder {
+  background: var(--ivory-deep);
+  position: relative;
+  overflow: hidden;
+}
+
+.img-placeholder::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--ivory-deep) 0%, var(--stone) 100%);
+  opacity: 0.5;
+}
+
+/* ── Animations ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideRight {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.animate-fadeUp {
+  animation: fadeUp 0.9s var(--ease-enter) forwards;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s var(--ease-luxury) forwards;
+}
+
+/* Stagger delays */
+.delay-1 { animation-delay: 0.1s; opacity: 0; }
+.delay-2 { animation-delay: 0.25s; opacity: 0; }
+.delay-3 { animation-delay: 0.4s; opacity: 0; }
+.delay-4 { animation-delay: 0.55s; opacity: 0; }
+.delay-5 { animation-delay: 0.7s; opacity: 0; }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--ivory); }
+::-webkit-scrollbar-thumb { background: var(--stone); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+/* ── Selection ── */
+::selection {
+  background: var(--gold-pale);
+  color: var(--slate-deep);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .container, .container--narrow {
+    padding: 0 1.25rem;
+  }
+  .section { padding: 4rem 0; }
+  .section--lg { padding: 6rem 0; }
+}
