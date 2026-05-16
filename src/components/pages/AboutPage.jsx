@@ -34,7 +34,7 @@ function PageHero() {
             fontStyle: "italic",
             lineHeight: 1.8,
           }}>
-            Rigorous training. Decades of practice. An unwavering commitment to the patient in front of him.
+            Rigorous training. Years of practice. An unwavering commitment to the patient in front of him.
           </p>
         </div>
       </div>
@@ -49,7 +49,7 @@ function Biography() {
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1.8fr", gap: "6rem", alignItems: "start" }}>
           <div>
             <div style={{ position: "relative" }}>
-              <ImageBlock aspectRatio="3/4" label="Dr. Arjun Mehta" />
+              <ImageBlock aspectRatio="3/4" label="Dr. B. Arvind" />
               <div style={{
                 position: "absolute",
                 bottom: "-1.5rem",
@@ -59,25 +59,23 @@ function Biography() {
                 background: "var(--slate-deep)",
                 border: "1px solid rgba(184,151,90,0.2)",
               }}>
-                <div style={{ fontFamily: "var(--font-display)", fontSize: "2rem", color: "var(--gold)", lineHeight: 1, marginBottom: "0.4rem" }}>MS</div>
-                <div style={{ fontFamily: "var(--font-sans)", fontSize: "0.58rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--stone-mid)" }}>FRCS · AOMSI · IAOMFS</div>
+                <div style={{ fontFamily: "var(--font-display)", fontSize: "2rem", color: "var(--gold)", lineHeight: 1, marginBottom: "0.4rem" }}>BDS · MDS</div>
+                <div style={{ fontFamily: "var(--font-sans)", fontSize: "0.72rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--stone-dark)" }}>RGUHS · HCG Bengaluru · RCS London</div>
               </div>
             </div>
 
             <div style={{ marginTop: "3.5rem" }}>
               <SectionLabel>Hospital Affiliations</SectionLabel>
-              {["AIIMS, New Delhi", "Breach Candy Hospital", "Kokilaben Dhirubhai Ambani Hospital", "Lilavati Hospital"].map(h => (
-                <div key={h} style={{
-                  fontFamily: "var(--font-sans)",
-                  fontSize: "0.8rem",
-                  color: "var(--stone-dark)",
-                  padding: "0.75rem 0",
-                  borderBottom: "1px solid var(--ivory-deep)",
-                  letterSpacing: "0.04em",
-                }}>
-                  {h}
-                </div>
-              ))}
+              <div style={{
+                fontFamily: "var(--font-sans)",
+                fontSize: "0.95rem",
+                color: "var(--stone-dark)",
+                padding: "0.75rem 0",
+                borderBottom: "1px solid var(--ivory-deep)",
+                letterSpacing: "0.04em",
+              }}>
+                PACE Hospitals, Hyderabad
+              </div>
             </div>
           </div>
 
@@ -92,15 +90,15 @@ function Biography() {
               marginBottom: "2rem",
               lineHeight: 1.1,
             }}>
-              Dr. Arjun Mehta<br />
-              <span style={{ fontSize: "1rem", fontFamily: "var(--font-sans)", letterSpacing: "0.1em", color: "var(--gold)", textTransform: "uppercase" }}>MS · FRCS · Maxillofacial Surgeon</span>
+              Dr. B. Arvind<br />
+              <span style={{ fontSize: "1rem", fontFamily: "var(--font-sans)", letterSpacing: "0.1em", color: "var(--gold)", textTransform: "uppercase" }}>BDS · MDS · RCS Fellow · Maxillofacial Surgeon</span>
             </h2>
 
             {[
-              "Dr. Arjun Mehta is a senior Oral and Maxillofacial Surgeon with over two decades of clinical practice at the highest levels of specialised facial surgery in India and internationally.",
-              "He completed his postgraduate training at the All India Institute of Medical Sciences, New Delhi — widely regarded as India's most prestigious surgical institution — before pursuing a fellowship at Guy's Hospital, London, where he trained under world-renowned facial surgeons.",
-              "His surgical expertise encompasses the full spectrum of maxillofacial surgery: from complex orthognathic and reconstructive procedures, to trauma, oncology, and the ever-growing domain of surgical facial aesthetics.",
-              "Dr. Mehta's philosophy is anchored in evidence-based medicine, surgical restraint, and deep patient collaboration. He does not perform any procedure he would not advise for a member of his own family.",
+              "Dr. B. Arvind is a dedicated Oral and Maxillofacial Surgeon based at PACE Hospitals, Hyderabad. His practice focuses on oncology, facial reconstruction, trauma, TMJ disorders, and precision oral surgery.",
+              "He completed his BDS and MDS at Kamineni Institute of Dental Sciences and went on to pursue a fellowship with Rajiv Gandhi University of Health Sciences (RGUHS). Further oncology training at HCG Cancer Hospital, Bengaluru deepened his expertise in oral cancer management.",
+              "An international fellowship at the Royal College of Surgeons (RCS), London broadened his surgical perspective and reinforced his commitment to contemporary, evidence-based care.",
+              "Dr. Arvind's philosophy is built on surgical restraint, clear communication, and treating every patient as a partner in their care. He prioritises outcomes that restore function and confidence while respecting the patient's individual needs.",
             ].map((para, i) => (
               <p key={i} style={{
                 fontFamily: "var(--font-serif)",
@@ -124,7 +122,7 @@ function Biography() {
               color: "var(--slate-deep)",
               lineHeight: 1.7,
             }}>
-              "Surgery must always serve the patient — not the surgeon's ego, not a trend, not a protocol. The patient in front of me is the only priority."
+              "My first responsibility is always to the patient: to offer clear options, honest guidance, and surgery only when it truly improves their health and quality of life."
             </div>
           </div>
         </div>
@@ -138,11 +136,10 @@ function Credentials() {
     {
       title: "Education & Training",
       items: [
-        { label: "MBBS", detail: "Grant Medical College, Mumbai" },
-        { label: "BDS + MDS", detail: "Government Dental College, Mumbai" },
-        { label: "MS (Oral & Maxillofacial Surgery)", detail: "AIIMS, New Delhi" },
-        { label: "FRCS (Maxillofacial Surgery)", detail: "Royal College of Surgeons, London" },
-        { label: "Fellowship in Craniofacial Surgery", detail: "Guy's Hospital, King's College London" },
+        { label: "BDS & MDS", detail: "Kamineni Institute of Dental Sciences" },
+        { label: "Fellowship (RGUHS)", detail: "Rajiv Gandhi University of Health Sciences" },
+        { label: "Oncology Fellowship", detail: "HCG Cancer Hospital, Bengaluru" },
+        { label: "Fellowship", detail: "Royal College of Surgeons (RCS), London" },
       ],
     },
     {
@@ -150,8 +147,6 @@ function Credentials() {
       items: [
         { label: "AOMSI", detail: "Association of Oral and Maxillofacial Surgeons of India" },
         { label: "IAOMFS", detail: "International Association of OMFS" },
-        { label: "ASPS", detail: "American Society of Plastic Surgeons — International Member" },
-        { label: "ISAPS", detail: "International Society of Aesthetic Plastic Surgery" },
         { label: "MCI Registered", detail: "Medical Council of India" },
       ],
     },
@@ -204,32 +199,42 @@ function Publications() {
   return (
     <section style={{ padding: "6rem 0", background: "var(--white)" }}>
       <div className="container">
-        <SectionHeading eyebrow="Research" title="Selected Publications" />
+        <SectionHeading eyebrow="About the Surgeon" title="Focused Surgical Care in Oral & Maxillofacial Surgery" />
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem" }}>
           {[
-            { title: "Advances in Virtual Surgical Planning for Orthognathic Cases", journal: "Journal of OMFS · 2023", type: "Original Research" },
-            { title: "TMJ Disc Repositioning: A 10-Year Outcome Study", journal: "Oral Surgery, Oral Medicine · 2022", type: "Clinical Study" },
-            { title: "Mandibular Reconstruction Using CAD/CAM Plates", journal: "British Journal of OMFS · 2021", type: "Case Series" },
-            { title: "Facial Trauma Management in Polytrauma Patients", journal: "Indian JOMFS · 2020", type: "Review Article" },
-          ].map((pub, i) => (
+            {
+              title: "Clinical Focus",
+              content: "Dr. B Arvind is a Consultant Oral & Maxillofacial Oncosurgeon with over nine years of clinical practice in oral cancer surgery, complex jaw procedures, facial trauma, and maxillofacial reconstruction.",
+            },
+            {
+              title: "Practice Scope",
+              content: "His practice focuses on surgical planning, primary resections, neck dissections, reconstructive procedures, orthognathic surgery, trauma care, implant-related surgery, and minor oral surgical procedures. His RCS London Fellowship credential is mentioned as a professional surgical qualification and does not imply physical study or training in London.",
+            },
+            {
+              title: "Consultations & Care",
+              content: "Dr. Arvind is available for clinic consultations at the Nalgonda branch from 6:30 PM to 9 PM, Monday to Saturday. Hospital consultations and surgical care are scheduled at PACE Hospitals from 9 AM to 6 PM, Monday to Saturday.",
+            },
+          ].map((card, i) => (
             <div key={i} style={{
               padding: "2rem",
               background: "var(--ivory)",
               border: "1px solid var(--ivory-deep)",
-              transition: "border-color 0.3s",
-              cursor: "pointer",
+              transition: "border-color 0.3s, transform 0.3s",
             }}
-              onMouseEnter={e => e.currentTarget.style.borderColor = "var(--gold)"}
-              onMouseLeave={e => e.currentTarget.style.borderColor = "var(--ivory-deep)"}
+              onMouseEnter={e => {
+                e.currentTarget.style.borderColor = "var(--gold)";
+                e.currentTarget.style.transform = "translateY(-2px)";
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.borderColor = "var(--ivory-deep)";
+                e.currentTarget.style.transform = "translateY(0)";
+              }}
             >
-              <div style={{ fontFamily: "var(--font-sans)", fontSize: "0.62rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--gold)", marginBottom: "0.75rem" }}>
-                {pub.type}
+              <div style={{ fontFamily: "var(--font-sans)", fontSize: "0.75rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--gold)", marginBottom: "0.8rem" }}>
+                {card.title}
               </div>
-              <div style={{ fontFamily: "var(--font-serif)", fontSize: "1rem", color: "var(--slate-deep)", lineHeight: 1.5, marginBottom: "0.75rem", fontWeight: 500 }}>
-                {pub.title}
-              </div>
-              <div style={{ fontFamily: "var(--font-sans)", fontSize: "0.72rem", color: "var(--stone-mid)", letterSpacing: "0.04em" }}>
-                {pub.journal}
+              <div style={{ fontFamily: "var(--font-serif)", fontSize: "1rem", color: "var(--slate-deep)", lineHeight: 1.8 }}>
+                {card.content}
               </div>
             </div>
           ))}

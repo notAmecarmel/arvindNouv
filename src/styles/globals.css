@@ -5,8 +5,8 @@
   --ivory:        #F8F5F0;
   --ivory-deep:   #EDE8E0;
   --stone:        #D4CCB8;
-  --stone-mid:    #A89F8C;
-  --stone-dark:   #6B6358;
+  --stone-mid:    #85786C;
+  --stone-dark:   #5B5046;
   --slate:        #2C2C2A;
   --slate-deep:   #1A1A18;
   --gold:         #B8975A;
@@ -15,7 +15,7 @@
   --white:        #FFFFFF;
   --text-primary: #1A1A18;
   --text-secondary: #6B6358;
-  --text-muted:   #A89F8C;
+  --text-muted:   #5B5046;
 
   /* Typography */
   --font-display: 'DM Serif Display', Georgia, serif;
@@ -94,11 +94,18 @@ main {
 
 .t-label {
   font-family: var(--font-sans);
-  font-size: 0.7rem;
+  font-size: 0.85rem;
   font-weight: 500;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--gold);
+}
+
+/* Small muted text — improve readability */
+.small-text, .muted, .text-muted, small {
+  font-size: 0.95rem;
+  color: var(--stone-dark);
+  line-height: 1.5;
 }
 
 /* ── Layout Utilities ── */

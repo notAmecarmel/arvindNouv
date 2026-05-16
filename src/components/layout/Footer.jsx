@@ -135,8 +135,8 @@ export default function Footer({ navigate }) {
           <div className="footer-grid">
             {/* Brand */}
             <div>
-              <div className="footer-brand-name">Dr. Arjun Mehta</div>
-              <div className="footer-brand-title">MS, FRCS · Maxillofacial Surgeon</div>
+              <div className="footer-brand-name">Dr. B. Arvind</div>
+              <div className="footer-brand-title">BDS · MDS · RCS Fellow · Maxillofacial Surgeon</div>
               <p className="footer-tagline">
                 "Precision in every procedure. Humanity in every consultation."
               </p>
@@ -195,12 +195,12 @@ export default function Footer({ navigate }) {
               <div className="footer-col-title">Reach Us</div>
               <div className="footer-contact-item">
                 <span className="footer-contact-label">Primary Clinic</span>
-                Suite 12, Breach Candy Surgical Centre<br />
-                Warden Road, Mumbai 400 036
+                PACE Hospitals<br />
+                Hyderabad, Telangana
               </div>
               <div className="footer-contact-item">
                 <span className="footer-contact-label">Appointments</span>
-                +91 98200 XXXXX
+                +91 83310 03232
               </div>
               <div className="footer-contact-item">
                 <span className="footer-contact-label">Email</span>

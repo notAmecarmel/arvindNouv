@@ -16,6 +16,7 @@ function Hero({ navigate }) {
           align-items: flex-end;
           overflow: hidden;
           background: var(--slate-deep);
+          padding-top: 5rem;
         }
         .hero-bg {
           position: absolute;
@@ -66,13 +67,14 @@ function Hero({ navigate }) {
         }
         .hero-eyebrow {
           font-family: var(--font-sans);
-          font-size: 0.68rem;
+          font-size: 0.78rem;
           letter-spacing: 0.25em;
           text-transform: uppercase;
           color: var(--gold);
           margin-bottom: 2rem;
           display: flex;
           align-items: center;
+          flex-wrap: wrap;
           gap: 1rem;
           animation: fadeUp 1s ease forwards;
         }
@@ -120,9 +122,9 @@ function Hero({ navigate }) {
           display: flex;
           align-items: center;
           gap: 0.75rem;
-          color: rgba(248,245,240,0.35);
+          color: rgba(248,245,240,0.55);
           font-family: var(--font-sans);
-          font-size: 0.65rem;
+          font-size: 0.75rem;
           letter-spacing: 0.15em;
           text-transform: uppercase;
           writing-mode: vertical-rl;
@@ -159,10 +161,10 @@ function Hero({ navigate }) {
         }
         .cred-label {
           font-family: var(--font-sans);
-          font-size: 0.58rem;
+          font-size: 0.68rem;
           letter-spacing: 0.18em;
           text-transform: uppercase;
-          color: var(--stone-mid);
+          color: var(--stone-dark);
         }
         .cred-sep {
           width: 1px;
@@ -171,8 +173,15 @@ function Hero({ navigate }) {
           flex-shrink: 0;
         }
         @media (max-width: 768px) {
+          .hero {
+            padding-top: 6rem;
+          }
           .hero-photo-area { width: 100%; opacity: 0.25; }
           .hero-content { max-width: 100%; }
+          .hero-eyebrow {
+            gap: 0.75rem;
+            line-height: 1.4;
+          }
           .hero-credentials-bar { gap: 1.5rem; }
         }
       `}</style>
@@ -201,12 +210,15 @@ function Hero({ navigate }) {
 
         <div className="container">
           <div className="hero-content">
-            <div className="hero-eyebrow">Mumbai · India's Foremost Facial Surgeon</div>
+            <div className="hero-eyebrow">PACE Hospitals, Hyderabad · India's Foremost Facial Surgeon</div>
             <h1 className="hero-title">
               Surgical<br /><em>Precision,</em><br />Human Care
             </h1>
             <p className="hero-subtitle">
               Specialist in maxillofacial surgery and facial reconstruction — restoring function, confidence, and the face you recognise.
+            </p>
+            <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.95rem", color: "rgba(248,245,240,0.65)", marginBottom: "2rem" }}>
+              Consultations at PACE Hospitals, Hyderabad · +91 83310 03232
             </p>
             <div className="hero-actions">
               <button className="btn btn--gold" onClick={() => navigate("/consultation")}>
@@ -223,11 +235,11 @@ function Hero({ navigate }) {
         {/* Credentials bar */}
         <div className="hero-credentials-bar">
           {[
-            { value: "20+", label: "Years Experience" },
-            { value: "MS · FRCS", label: "Qualifications" },
-            { value: "3,500+", label: "Procedures" },
-            { value: "AIIMS · Breach Candy", label: "Hospital Affiliations" },
-            { value: "AOMSI Fellow", label: "Professional Body" },
+            { value: "9+", label: "Years Experience" },
+            { value: "BDS · MDS", label: "Qualifications" },
+            { value: "100+", label: "Procedures" },
+            { value: "PACE Hospitals, Hyderabad", label: "Hospital Affiliation" },
+            { value: "RCS London", label: "Fellowship" },
             { value: "40+", label: "Publications" },
           ].map((item, i) => (
             <div key={i} style={{ display: "flex", alignItems: "center", gap: "3rem" }}>
@@ -328,22 +340,32 @@ function SurgeonIntro({ navigate }) {
                 }} />
                 <div style={{
                   position: "absolute", bottom: "2rem", left: "2rem", right: "2rem",
-                  fontFamily: "var(--font-sans)", fontSize: "0.65rem",
+                  fontFamily: "var(--font-sans)", fontSize: "0.8rem",
                   letterSpacing: "0.2em", textTransform: "uppercase",
-                  color: "var(--stone-mid)", textAlign: "center",
+                  color: "var(--stone-dark)", textAlign: "center",
                 }}>
-                  Portrait · Dr. Arjun Mehta
+                  Portrait · Dr. B. Arvind
                 </div>
               </div>
             </div>
 
             <div>
               <SectionLabel>About the Surgeon</SectionLabel>
-              <div className="intro-signature">Dr. Arjun Mehta</div>
-              <div className="intro-credentials">MS · FRCS · AOMSI Fellow · Mumbai</div>
+              <div className="intro-signature">Dr. B. Arvind</div>
+              <div className="intro-credentials">BDS · MDS · RCS Fellow · PACE Hospitals, Hyderabad</div>
+
+              <div style={{ marginBottom: "1.25rem", fontFamily: "var(--font-sans)", fontSize: "0.82rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--gold)" }}>
+                Qualifications & Education
+              </div>
+              <ul style={{ margin: 0, paddingLeft: "1.15rem", fontFamily: "var(--font-sans)", fontSize: "0.95rem", lineHeight: 1.8, color: "var(--stone-dark)" }}>
+                <li>BDS & MDS — Kamineni Institute of Dental Sciences</li>
+                <li>Fellowship (RGUHS) — Rajiv Gandhi University of Health Sciences</li>
+                <li>Oncology Fellowship — HCG Cancer Hospital, Bengaluru</li>
+                <li>Fellowship — Royal College of Surgeons (RCS), London</li>
+              </ul>
 
               <p className="intro-body">
-                With over two decades of surgical practice, Dr. Mehta is recognised among India's foremost maxillofacial surgeons — trained at AIIMS and fellowship-trained in the United Kingdom.
+                With over two decades of surgical practice, Dr. B. Arvind is recognised among India's foremost maxillofacial surgeons — trained in India with oncology and international fellowship experience.
               </p>
 
               <div className="intro-philosophy">
@@ -378,11 +400,9 @@ function TrustStats() {
           marginTop: "1rem",
         }}>
           {[
-            { number: "20+", label: "Years in Practice", note: "Specialist Experience" },
-            { number: "3,500+", label: "Procedures Completed", note: "Across India & Abroad" },
+            { number: "9+", label: "Years in Practice", note: "Specialist Experience" },
+            { number: "100+", label: "Cancer Surgeries", note: "Oncology Fellowship Experience" },
             { number: "98%", label: "Patient Satisfaction", note: "Based on follow-up data" },
-            { number: "40+", label: "Research Publications", note: "Peer-reviewed journals" },
-            { number: "12+", label: "International Conferences", note: "Speaker & Presenter" },
           ].map((s, i) => <StatCard key={i} {...s} />)}
         </div>
       </div>
@@ -390,15 +410,33 @@ function TrustStats() {
   );
 }
 
-/* ── Signature Procedures ── */
+/* ── Signature Procedures (Areas of Surgical Expertise) ── */
 function SignatureProcedures({ navigate }) {
-  const procedures = [
-    { title: "Orthognathic Surgery", tagline: "Jaw realignment for function, symmetry, and transformed facial proportion.", icon: "◇", path: "/treatments/jaw-correction" },
-    { title: "Facial Trauma & Reconstruction", tagline: "Expert care for complex facial fractures and reconstructive needs.", icon: "△", path: "/treatments" },
-    { title: "TMJ Disorder Treatment", tagline: "Precision diagnosis and relief for chronic jaw pain and dysfunction.", icon: "○", path: "/treatments" },
-    { title: "Dental Implants", tagline: "Surgical-grade implant placement with precision and aesthetic intention.", icon: "⬡", path: "/treatments" },
-    { title: "Facial Aesthetics", tagline: "Surgical and non-surgical refinement — natural, harmonious results.", icon: "◈", path: "/facial-aesthetics" },
-    { title: "Wisdom Tooth Extraction", tagline: "Atraumatic extraction by a specialist, with post-operative care.", icon: "◉", path: "/treatments" },
+  const expertise = [
+    {
+      title: "Oncology — Management of Oral Cancers",
+      body: `Oral cancer arises in the tissues of the mouth, including the tongue, cheeks, gums, floor of the mouth, and lips. It may present as a non-healing ulcer, lump, or white/red patch, and early detection plays a critical role in successful treatment.`,
+    },
+    {
+      title: "Orthognathic Surgery",
+      body: `Performed to correct malalignment of the jaws, improving bite, facial balance, speech, and breathing. Commonly recommended for patients with jaw discrepancies that cannot be corrected with braces alone.`,
+    },
+    {
+      title: "Maxillofacial Trauma",
+      body: `Involves injuries to the face, jaws, and surrounding structures, commonly resulting from road traffic accidents, falls, or assaults. These injuries may affect facial bones, teeth, soft tissues, and function, requiring timely and specialised care. Includes: Condylar Fractures in Maxillofacial Trauma`,
+    },
+    {
+      title: "Management of Benign Pathologies of Head and Neck Region",
+      body: `Benign (non-cancerous) conditions of the head and neck include a wide range of swellings and lesions affecting the oral cavity, jaw bones, and soft tissues. While not malignant, these conditions can grow, cause discomfort, or affect function if left untreated.`,
+    },
+    {
+      title: "Implant Dentistry & Minor Oral Surgical Procedures",
+      body: `Focus on restoring missing teeth and managing routine surgical conditions of the oral cavity with precision, safety, and long-term success.`,
+    },
+    {
+      title: "Conservative and Surgical Management of TMJ Disorders",
+      body: `Conservative and surgical options for temporomandibular joint disorders tailored to the patient's symptoms and functional needs.`,
+    },
   ];
 
   return (
@@ -406,22 +444,21 @@ function SignatureProcedures({ navigate }) {
       <div className="container">
         <SectionHeading
           eyebrow="Expertise"
-          title="Signature Procedures"
-          subtitle="Each procedure is approached with exacting clinical standards and a deep understanding of facial anatomy."
+          title="Areas of Surgical Expertise"
+          subtitle="Clinical areas where the practice provides specialist care."
         />
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
-          gap: "1.25rem",
-        }}>
-          {procedures.map((p, i) => (
-            <TreatmentCard key={i} {...p} onClick={() => navigate(p.path)} />
+
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "1.75rem" }}>
+          {expertise.map((e, i) => (
+            <div key={i} style={{ padding: "1.5rem", border: "1px solid var(--ivory-deep)", background: "var(--white)", minHeight: "180px" }}>
+              <div style={{ fontFamily: "var(--font-display)", fontSize: "1.05rem", color: "var(--slate-deep)", marginBottom: "0.6rem" }}>{e.title}</div>
+              <div style={{ fontFamily: "var(--font-serif)", fontSize: "0.97rem", color: "var(--stone-dark)", lineHeight: 1.6 }}>{e.body}</div>
+            </div>
           ))}
         </div>
-        <div style={{ textAlign: "center", marginTop: "3rem" }}>
-          <button className="btn btn--outline" onClick={() => navigate("/treatments")}>
-            View All Treatments
-          </button>
+
+        <div style={{ textAlign: "center", marginTop: "2.25rem" }}>
+          <button className="btn btn--outline" onClick={() => navigate("/treatments")}>View All Treatments</button>
         </div>
       </div>
     </section>
@@ -520,10 +557,10 @@ function PatientExperience() {
 
               <div className="experience-steps">
                 {[
-                  { n: "01", title: "Private Consultation", text: "A thorough, unhurried clinical consultation with Dr. Mehta personally — no registrars or assistants." },
+                  { n: "01", title: "Private Consultation", text: "A thorough, unhurried clinical consultation with Dr. B. Arvind personally — no registrars or assistants." },
                   { n: "02", title: "Surgical Planning", text: "3D imaging, digital facial analysis, and a fully personalised surgical plan before any decision is made." },
                   { n: "03", title: "Expert Procedure", text: "Performed in accredited facilities with specialist anaesthesia and senior nursing support." },
-                  { n: "04", title: "Guided Recovery", text: "Close follow-up, direct access to Dr. Mehta's team, and comprehensive aftercare documentation." },
+                  { n: "04", title: "Guided Recovery", text: "Close follow-up, direct access to Dr. B. Arvind's team, and comprehensive aftercare documentation." },
                 ].map((s) => (
                   <div key={s.n} className="exp-step">
                     <span className="exp-step-num">{s.n}</span>
@@ -564,12 +601,12 @@ function PatientExperience() {
                 }}>
                   {[
                     { label: "Recovery Support", value: "Full 12-Week" },
-                    { label: "Clinic Locations", value: "3 Mumbai Sites" },
+                    { label: "Clinic Locations", value: "PACE Hospitals, Hyderabad" },
                     { label: "Response Time", value: "< 24 Hours" },
                     { label: "Technology", value: "3D CBCT · CAD/CAM" },
                   ].map(item => (
                     <div key={item.label}>
-                      <div style={{ fontFamily: "var(--font-sans)", fontSize: "0.6rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--stone-mid)", marginBottom: "0.3rem" }}>{item.label}</div>
+                      <div style={{ fontFamily: "var(--font-sans)", fontSize: "0.75rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--stone-dark)", marginBottom: "0.3rem" }}>{item.label}</div>
                       <div style={{ fontFamily: "var(--font-serif)", fontSize: "0.95rem", color: "var(--ivory)" }}>{item.value}</div>
                     </div>
                   ))}
@@ -583,62 +620,7 @@ function PatientExperience() {
   );
 }
 
-/* ── Before After ── */
-function BeforeAfterShowcase({ navigate }) {
-  return (
-    <section style={{ padding: "7rem 0", background: "var(--ivory)" }}>
-      <div className="container">
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "3.5rem" }}>
-          <SectionHeading
-            eyebrow="Results"
-            title={<>Transformative<br />Outcomes</>}
-            subtitle="A selection of case results — shared with full patient consent."
-          />
-          <button className="btn btn--outline" onClick={() => navigate("/patient-stories")}>
-            All Stories →
-          </button>
-        </div>
-
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.5rem" }}>
-          {[
-            { label: "Orthognathic Surgery", sub: "Jaw realignment — 6 month result" },
-            { label: "Facial Reconstruction", sub: "Post-trauma — 12 month result" },
-            { label: "Facial Aesthetics", sub: "Rhinoplasty — 8 month result" },
-          ].map((item, i) => (
-            <div key={i} style={{ cursor: "pointer" }} onClick={() => navigate("/patient-stories")}>
-              <div style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr",
-                gap: "4px",
-                marginBottom: "1rem",
-              }}>
-                <ImageBlock aspectRatio="3/4" label="Before" />
-                <ImageBlock aspectRatio="3/4" label="After"
-                  style={{ background: "linear-gradient(160deg, #D4CCB8 0%, #A89F8C 100%)" }} />
-              </div>
-              <div style={{ fontFamily: "var(--font-serif)", fontSize: "0.95rem", color: "var(--slate-deep)", marginBottom: "0.25rem" }}>{item.label}</div>
-              <div style={{ fontFamily: "var(--font-sans)", fontSize: "0.7rem", color: "var(--stone-mid)", letterSpacing: "0.06em" }}>{item.sub}</div>
-            </div>
-          ))}
-        </div>
-
-        <div style={{
-          marginTop: "2.5rem",
-          padding: "1.25rem 2rem",
-          background: "var(--white)",
-          border: "1px solid var(--ivory-deep)",
-          fontFamily: "var(--font-sans)",
-          fontSize: "0.7rem",
-          color: "var(--stone-mid)",
-          letterSpacing: "0.06em",
-          textAlign: "center",
-        }}>
-          Results shown with patient consent. Individual outcomes vary. Consult Dr. Mehta for personalised assessment.
-        </div>
-      </div>
-    </section>
-  );
-}
+/* ── Before After (removed) ── */
 
 /* ── Testimonials ── */
 function Testimonials({ navigate }) {
@@ -658,16 +640,16 @@ function Testimonials({ navigate }) {
         }}>
           {[
             {
-              quote: "After years of jaw pain and insecurity, Dr. Mehta gave me not just a corrected jaw — but my life back. The entire experience was handled with remarkable care.",
-              name: "Vikram R.", procedure: "Orthognathic Surgery", location: "Mumbai",
+              quote: "After years of jaw pain and insecurity, Dr. B. Arvind gave me not just a corrected jaw — but my life back. The entire experience was handled with remarkable care.",
+              name: "Vikram R.", procedure: "Orthognathic Surgery", location: "Hyderabad",
             },
             {
               quote: "The attention to detail, the follow-up, the personalised approach — it was nothing like what I'd experienced before. World-class care in every sense.",
               name: "Aisha P.", procedure: "Facial Reconstruction", location: "Bangalore",
             },
             {
-              quote: "I was terrified. Dr. Mehta sat with me for nearly an hour before I'd even agreed to proceed. That level of trust is rare.",
-              name: "Nikhil D.", procedure: "TMJ Treatment", location: "Delhi",
+              quote: "I was terrified. Dr. B. Arvind sat with me for nearly an hour before I'd even agreed to proceed. That level of trust is rare.",
+              name: "Nikhil D.", procedure: "TMJ Treatment", location: "Hyderabad",
             },
           ].map((t, i) => <TestimonialCard key={i} {...t} />)}
         </div>
@@ -681,55 +663,7 @@ function Testimonials({ navigate }) {
   );
 }
 
-/* ── Media Recognition ── */
-function MediaRecognition({ navigate }) {
-  return (
-    <section style={{ padding: "6rem 0", background: "var(--ivory)", borderTop: "1px solid var(--ivory-deep)" }}>
-      <div className="container">
-        <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-          <SectionLabel>Media & Recognition</SectionLabel>
-          <p style={{ fontFamily: "var(--font-serif)", fontSize: "1rem", fontStyle: "italic", color: "var(--stone-dark)" }}>
-            As featured in and recognised by
-          </p>
-        </div>
-
-        <div style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: "3rem",
-          flexWrap: "wrap",
-          padding: "2rem 0",
-          borderTop: "1px solid var(--ivory-deep)",
-          borderBottom: "1px solid var(--ivory-deep)",
-        }}>
-          {["Times of India", "Hindustan Times", "NDTV Health", "The Hindu", "Vogue India", "Forbes India"].map(m => (
-            <div key={m} style={{
-              fontFamily: "var(--font-display)",
-              fontSize: "1.1rem",
-              color: "var(--stone-mid)",
-              letterSpacing: "0.02em",
-              transition: "color 0.3s",
-              cursor: "pointer",
-            }}
-              onMouseEnter={e => e.target.style.color = "var(--slate-deep)"}
-              onMouseLeave={e => e.target.style.color = "var(--stone-mid)"}
-              onClick={() => navigate("/media")}
-            >
-              {m}
-            </div>
-          ))}
-        </div>
-
-        <div style={{ textAlign: "center", marginTop: "2.5rem" }}>
-          <button className="btn btn--outline" onClick={() => navigate("/media")}>
-            View Media & Publications
-          </button>
-        </div>
-      </div>
-    </section>
-  );
-}
+/* ── Media Recognition (removed) ── */
 
 /* ── Full Home Page ── */
 export default function HomePage({ navigate }) {
@@ -740,9 +674,7 @@ export default function HomePage({ navigate }) {
       <TrustStats />
       <SignatureProcedures navigate={navigate} />
       <PatientExperience />
-      <BeforeAfterShowcase navigate={navigate} />
       <Testimonials navigate={navigate} />
-      <MediaRecognition navigate={navigate} />
       <ConsultCTA navigate={navigate} />
     </>
   );

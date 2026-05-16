@@ -185,7 +185,7 @@ export default function Navigation({ currentPath, navigate }) {
       <nav className="nav-root">
         <div className="nav-inner">
           <div className="nav-logo" onClick={() => handleNav("/")}>
-            <span className="nav-logo-name">Dr. Arjun Mehta</span>
+            <span className="nav-logo-name">Dr. B. Arvind</span>
             <span className="nav-logo-title">Maxillofacial & Facial Surgeon</span>
           </div>
 
