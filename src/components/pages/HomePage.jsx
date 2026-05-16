@@ -588,10 +588,10 @@ function PatientExperience() {
                   lineHeight: 1.5,
                   marginBottom: "2rem",
                 }}>
-                  "He took time to explain every step. I never felt like a case number."
+                  "The best doctor for orthopedic surgery"
                 </div>
                 <div style={{ fontFamily: "var(--font-sans)", fontSize: "0.72rem", color: "var(--gold)", letterSpacing: "0.15em", textTransform: "uppercase" }}>
-                  Priya S. — Jaw Correction Patient
+                  Prasanna Kanukuntla — Patient
                 </div>
                 <div style={{ height: "1px", background: "rgba(184,151,90,0.2)", margin: "2rem 0" }} />
                 <div style={{
@@ -640,16 +640,22 @@ function Testimonials({ navigate }) {
         }}>
           {[
             {
-              quote: "After years of jaw pain and insecurity, Dr. B. Arvind gave me not just a corrected jaw — but my life back. The entire experience was handled with remarkable care.",
-              name: "Vikram R.", procedure: "Orthognathic Surgery", location: "Hyderabad",
+              quote: "Dr. Arvind is such a humble, gentle and down to earth person. He's an expert in his field. He has treated me for chicks bone surgery done my debridement and I'm very much satisfied with his treatment and the follow ups. Highly recommend to everyone",
+              name: "Rathod Teju",
+              procedure: "Cheek bone surgery",
+              location: "Hyderabad",
             },
             {
-              quote: "The attention to detail, the follow-up, the personalised approach — it was nothing like what I'd experienced before. World-class care in every sense.",
-              name: "Aisha P.", procedure: "Facial Reconstruction", location: "Bangalore",
+              quote: "I was admitted for Chronic Sialadenitis, and I am incredibly happy with the care I received from Dr. Arvind. He did a great job right from the start. He was excellent at diagnosing the issue and clearly explained the root cause of my problem. The Sub mandibular excision surgery was successful, and even after the operation, he was very supportive. He helped me manage and recover from the minor side effects I experienced. I would highly recommend Dr. Arvind to anyone.",
+              name: "sharmila parchuri",
+              procedure: "Chronic Sialadenitis treatment",
+              location: "Hyderabad",
             },
             {
-              quote: "I was terrified. Dr. B. Arvind sat with me for nearly an hour before I'd even agreed to proceed. That level of trust is rare.",
-              name: "Nikhil D.", procedure: "TMJ Treatment", location: "Hyderabad",
+              quote: "Dr. Arvind is such a humble, gentle and down to earth person. He's an expert in his field. He has treated me for ORN of the jaw and done my debridement and I'm very much satisfied with his treatment and the follow ups.",
+              name: "Dianghun Shongwan",
+              procedure: "ORN of the jaw treatment",
+              location: "Hyderabad",
             },
           ].map((t, i) => <TestimonialCard key={i} {...t} />)}
         </div>
