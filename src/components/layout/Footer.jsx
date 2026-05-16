@@ -168,18 +168,19 @@ export default function Footer({ navigate }) {
               </ul>
             </div>
 
-            {/* Treatments */}
+            {/* Procedures / Expertise */}
             <div>
               <div className="footer-col-title">Procedures</div>
               <ul className="footer-links">
                 {[
-                  "Jaw Correction Surgery",
-                  "Dental Implants",
-                  "Facial Trauma",
-                  "TMJ Disorders",
-                  "Facial Reconstruction",
-                  "Wisdom Tooth Extraction",
-                  "Rhinoplasty",
+                  "Oncology — Oral Cancer Management",
+                  "Salivary Gland Tumours",
+                  "Neck Masses & Lymph Node Biopsy",
+                  "Orthognathic (Jaw) Surgery",
+                  "Maxillofacial Trauma",
+                  "Benign Head & Neck Pathologies",
+                  "Implant Dentistry & Minor Oral Surgery",
+                  "Advanced Implant Dentistry",
                 ].map(t => (
                   <li key={t}>
                     <span className="footer-link" onClick={() => navigate("/treatments")}>
@@ -203,8 +204,6 @@ export default function Footer({ navigate }) {
                 +91 83310 03232
               </div>
               <div className="footer-contact-item">
-                <span className="footer-contact-label">Email</span>
-                consult@drArjunmehta.in
               </div>
               <div style={{ marginTop: "1.5rem" }}>
                 <span
@@ -229,7 +228,7 @@ export default function Footer({ navigate }) {
           </div>
 
           <div className="footer-bottom">
-            <span>© {new Date().getFullYear()} Dr. Arjun Mehta. All rights reserved.</span>
+            <span>© {new Date().getFullYear()} Dr. B. Arvind. All rights reserved.</span>
             <div className="footer-certifications">
               <span>Privacy Policy</span>
               <span style={{ color: "rgba(212,204,184,0.25)" }}>|</span>
