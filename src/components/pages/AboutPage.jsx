@@ -207,6 +207,11 @@ function Publications() {
               content: "Dr. B Arvind is a Consultant Oral & Maxillofacial Oncosurgeon with over nine years of clinical practice in oral cancer surgery, complex jaw procedures, facial trauma, and maxillofacial reconstruction.",
             },
             {
+              title: "Watch the Surgeon",
+              video: true,
+              src: "https://www.youtube.com/embed/ZMLJtDI3-Ac",
+            },
+            {
               title: "Practice Scope",
               content: "His practice focuses on surgical planning, primary resections, neck dissections, reconstructive procedures, orthognathic surgery, trauma care, implant-related surgery, and minor oral surgical procedures. His RCS London Fellowship credential is mentioned as a professional surgical qualification and does not imply physical study or training in London.",
             },
@@ -214,30 +219,52 @@ function Publications() {
               title: "Consultations & Care",
               content: "Dr. Arvind is available for clinic consultations at the Nalgonda branch from 6:30 PM to 9 PM, Monday to Saturday. Hospital consultations and surgical care are scheduled at PACE Hospitals from 9 AM to 6 PM, Monday to Saturday.",
             },
-          ].map((card, i) => (
-            <div key={i} style={{
-              padding: "2rem",
-              background: "var(--ivory)",
-              border: "1px solid var(--ivory-deep)",
-              transition: "border-color 0.3s, transform 0.3s",
-            }}
-              onMouseEnter={e => {
-                e.currentTarget.style.borderColor = "var(--gold)";
-                e.currentTarget.style.transform = "translateY(-2px)";
+          ].map((card, i) => {
+            const isVideo = card.video;
+            return (
+              <div key={i} style={{
+                padding: isVideo ? 0 : "2rem",
+                background: isVideo ? "transparent" : "var(--ivory)",
+                border: isVideo ? "none" : "1px solid var(--ivory-deep)",
+                transition: "border-color 0.3s, transform 0.3s",
               }}
-              onMouseLeave={e => {
-                e.currentTarget.style.borderColor = "var(--ivory-deep)";
-                e.currentTarget.style.transform = "translateY(0)";
-              }}
-            >
-              <div style={{ fontFamily: "var(--font-sans)", fontSize: "0.75rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--gold)", marginBottom: "0.8rem" }}>
-                {card.title}
+                onMouseEnter={e => {
+                  if (!isVideo) {
+                    e.currentTarget.style.borderColor = "var(--gold)";
+                    e.currentTarget.style.transform = "translateY(-2px)";
+                  }
+                }}
+                onMouseLeave={e => {
+                  if (!isVideo) {
+                    e.currentTarget.style.borderColor = "var(--ivory-deep)";
+                    e.currentTarget.style.transform = "translateY(0)";
+                  }
+                }}
+              >
+                {!card.video && (
+                  <div style={{ fontFamily: "var(--font-sans)", fontSize: "0.75rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--gold)", marginBottom: "0.8rem" }}>
+                    {card.title}
+                  </div>
+                )}
+                {card.video ? (
+                  <div style={{ position: "relative", paddingTop: "56.25%", width: "100%", overflow: "hidden", background: "#000" }}>
+                    <iframe
+                      src={card.src}
+                      title="YouTube video player"
+                      style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: 0 }}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                    />
+                  </div>
+                ) : (
+                  <div style={{ fontFamily: "var(--font-serif)", fontSize: "1rem", color: "var(--slate-deep)", lineHeight: 1.8 }}>
+                    {card.content}
+                  </div>
+                )}
               </div>
-              <div style={{ fontFamily: "var(--font-serif)", fontSize: "1rem", color: "var(--slate-deep)", lineHeight: 1.8 }}>
-                {card.content}
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
