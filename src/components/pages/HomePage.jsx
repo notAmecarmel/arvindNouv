@@ -3,6 +3,7 @@ import {
   SectionLabel, SectionHeading, StatCard,
   TreatmentCard, TestimonialCard, ImageBlock, ConsultCTA
 } from "../ui/SharedComponents";
+import hero2 from "../../assets/hero2.jpeg";
 
 /* ── Hero Section ── */
 function Hero({ navigate }) {
@@ -334,6 +335,7 @@ function SurgeonIntro({ navigate }) {
           <div className="intro-grid">
             <div className="intro-image-frame">
               <div className="intro-image">
+                <img src={hero2} alt="Dr. B. Arvind" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                 <div style={{
                   position: "absolute", inset: 0,
                   background: "linear-gradient(180deg, transparent 60%, rgba(26,26,24,0.2) 100%)",

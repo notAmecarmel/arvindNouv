@@ -173,7 +173,7 @@ export default function ConsultationPage({ navigate }) {
                 lineHeight: 1.8,
                 maxWidth: "480px",
               }}>
-                Every surgical decision deserves unhurried clarity. Your first consultation is a private, no-obligation dialogue — with Dr. Mehta directly.
+                Every surgical decision deserves unhurried clarity. Your first consultation is a private, no-obligation dialogue — with Dr. Arvind directly.
               </p>
             </div>
           </div>
@@ -190,7 +190,7 @@ export default function ConsultationPage({ navigate }) {
                   Thank you, {form.name.split(" ")[0]}.
                 </h2>
                 <p style={{ fontFamily: "var(--font-serif)", fontSize: "1rem", color: "var(--stone-dark)", fontStyle: "italic", lineHeight: 1.8 }}>
-                  Your request has been received. A member of Dr. Mehta's team will contact you within 24 hours to confirm your consultation.
+                  Your request has been received. A member of Dr. Arvind's team will contact you within 24 hours to confirm your consultation.
                 </p>
                 <div style={{
                   marginTop: "2rem",
@@ -289,7 +289,7 @@ export default function ConsultationPage({ navigate }) {
                       name="message"
                       value={form.message}
                       onChange={handleChange}
-                      placeholder="Any details you'd like Dr. Mehta to know before the consultation..."
+                      placeholder="Any details you'd like Dr. Arvind to know before the consultation..."
                     />
                   </div>
                 </div>
@@ -333,10 +333,10 @@ export default function ConsultationPage({ navigate }) {
 
             {[
               { label: "Duration", value: "45–60 minutes, unhurried." },
-              { label: "Who You'll Meet", value: "Dr. Mehta directly — not a registrar or coordinator." },
+              { label: "Who You'll Meet", value: "Dr. Arvind directly — not a registrar or coordinator." },
               { label: "What We Cover", value: "Medical history, clinical examination, imaging review, and your goals." },
               { label: "Decision Pressure", value: "None. There is no obligation to proceed." },
-              { label: "Location Options", value: "Breach Candy, Bandra, or Powai clinic — your choice." },
+              { label: "Location", value: "PACE Hospitals, HiTech City, Hyderabad" },
               { label: "Response Time", value: "Within 24 hours of submission." },
             ].map(item => (
               <div key={item.label} className="info-item">

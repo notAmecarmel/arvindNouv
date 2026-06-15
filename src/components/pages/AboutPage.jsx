@@ -1,3 +1,4 @@
+import hero2 from "../../assets/hero2.jpeg";
 import { SectionLabel, SectionHeading, ImageBlock, ConsultCTA } from "../ui/SharedComponents";
 
 function PageHero() {
@@ -49,7 +50,9 @@ function Biography() {
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1.8fr", gap: "6rem", alignItems: "start" }}>
           <div>
             <div style={{ position: "relative" }}>
-              <ImageBlock aspectRatio="3/4" label="Dr. B. Arvind" />
+              <div className="intro-image">
+                <img src={hero2} alt="Dr. B. Arvind" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              </div>
               <div style={{
                 position: "absolute",
                 bottom: "-1.5rem",

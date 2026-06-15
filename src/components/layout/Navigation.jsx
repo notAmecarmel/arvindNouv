@@ -3,9 +3,6 @@ import { useState, useEffect } from "react";
 const NAV_LINKS = [
   { label: "About", path: "/about" },
   { label: "Treatments", path: "/treatments" },
-  { label: "Facial Aesthetics", path: "/facial-aesthetics" },
-  { label: "Patient Stories", path: "/patient-stories" },
-  { label: "Media", path: "/media" },
   { label: "Contact", path: "/contact" },
 ];
 
