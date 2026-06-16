@@ -1,4 +1,5 @@
 import { SectionLabel } from "../ui/SharedComponents";
+import { useState } from "react";
 
 const LOCATIONS = [
   {
@@ -15,6 +16,59 @@ const LOCATIONS = [
 ];
 
 export default function ContactPage({ navigate }) {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: ""
+  });
+
+  const [submitted, setSubmitted] = useState(false);
+
+  const [loading, setLoading] = useState(false);
+  
+  const handleChange = (e) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value
+    });
+  };
+  const handleSubmit = async () => {
+
+  if (!form.name || !form.email || !form.message) {
+    alert("Please fill required fields");
+    return;
+  }
+
+  setLoading(true);
+
+  try {
+
+    const response = await fetch(
+      "/api/contact",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(form)
+      }
+    );
+
+    const data = await response.json();
+
+    if (data.success) {
+      setSubmitted(true);
+    }
+
+  } catch (err) {
+    console.error(err);
+    alert("Failed to send message");
+  }
+
+  setLoading(false);
+};
   return (
     <>
       <style>{`
@@ -312,11 +366,17 @@ export default function ContactPage({ navigate }) {
               >
                 <input
                   className="contact-field"
+                  name="name"
+                  value={form.name}
+                  onChange={handleChange}
                   placeholder="Full Name"
                 />
 
                 <input
                   className="contact-field"
+                  name="email"
+                  value={form.email}
+                  onChange={handleChange}
                   placeholder="Email Address"
                   type="email"
                 />
@@ -324,16 +384,25 @@ export default function ContactPage({ navigate }) {
 
               <input
                 className="contact-field"
+                name="phone"
+                value={form.phone}
+                onChange={handleChange}
                 placeholder="Phone Number"
               />
 
               <input
                 className="contact-field"
+                name="subject"
+                value={form.subject}
+                onChange={handleChange}
                 placeholder="Subject"
               />
 
               <textarea
                 className="contact-field"
+                name="message"
+                value={form.message}
+                onChange={handleChange}
                 placeholder="Your message..."
                 style={{
                   minHeight: "120px",
@@ -344,12 +413,10 @@ export default function ContactPage({ navigate }) {
 
               <button
                 className="btn btn--primary"
-                style={{
-                  width: "100%",
-                  justifyContent: "center",
-                }}
+                onClick={handleSubmit}
+                disabled={loading}
               >
-                Send Message
+                {loading ? "Sending..." : "Send Message"}
               </button>
             </div>
 
