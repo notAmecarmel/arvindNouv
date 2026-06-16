@@ -5,13 +5,42 @@ export default function ConsultationPage({ navigate }) {
   const [form, setForm] = useState({
     name: "", email: "", phone: "", procedure: "", message: "", preferred: "morning"
   });
+  const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleSubmit = () => {
-    if (form.name && form.email && form.phone) setSubmitted(true);
-  };
+  const handleSubmit = async () => {
+
+  if (!form.name || !form.email || !form.phone) {
+    alert("Please fill all required fields");
+    return;
+  }
+
+  try {
+
+    const response = await fetch(
+      "/api/consultation",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(form)
+      }
+    );
+
+    const data = await response.json();
+
+    if (data.success) {
+      setSubmitted(true);
+    }
+
+  } catch (err) {
+    console.error("FULL ERROR:", err);
+    alert(err.message);
+  }
+};
 
   return (
     <>
@@ -297,9 +326,14 @@ export default function ConsultationPage({ navigate }) {
                 <button
                   className="btn btn--primary"
                   onClick={handleSubmit}
-                  style={{ width: "100%", justifyContent: "center", padding: "1.1rem" }}
+                  disabled={loading}
+                  style={{
+                    width: "100%",
+                    justifyContent: "center",
+                    padding: "1.1rem"
+                  }}
                 >
-                  Submit Request
+                  {loading ? "Submitting..." : "Submit Request"}
                 </button>
 
                 <p style={{
