@@ -9,7 +9,7 @@ export default async function handler(req, res) {
   try {
 
     const response = await fetch(
-      "YOUR_CONTACT_GOOGLE_SCRIPT_URL",
+      "https://script.google.com/macros/s/AKfycbxAcgUAgF265I6ALMG3wAFl_zhdvs90hu8PgxwZPrMGSEnweuHAxIgcDRyKW6WNeVKmAA/exec",
       {
         method: "POST",
         headers: {
