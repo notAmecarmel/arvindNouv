@@ -11,6 +11,7 @@ const LOCATIONS = [
     primary: true,
     mapEmbed:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4024.3347462930205!2d78.38166117540446!3d17.446908283450444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb916020093aa3%3A0xe37f244ddf5444a7!2sPACE%20Hospitals%20-%20Best%20Hospital%20in%20Hyderabad%2C%20HITEC%20City!5e1!3m2!1sen!2sin!4v1781794293394!5m2!1sen!2sin",
+    directions: "https://maps.app.goo.gl/YqJBqU94p6mUeeGB6",
   },
   {
     name: "Dhriti Dental — Nallagandla",
@@ -202,7 +203,7 @@ export default function ContactPage({ navigate }) {
               maxWidth: "520px",
             }}
           >
-            Reach out to Dhriti Dental for appointments, consultations, and
+            Reach out to Dr. Arvind for appointments, consultations, and
             dental care enquiries. We are committed to delivering advanced,
             patient-focused treatment in a comfortable environment.
           </p>
@@ -302,7 +303,7 @@ export default function ContactPage({ navigate }) {
                   ))}
 
                   <a
-                    href="https://maps.google.com/?q=Dhriti+Dental+Nallagandla+Hyderabad"
+                    href={loc.directions || `https://maps.google.com/?q=${encodeURIComponent(loc.name)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{
