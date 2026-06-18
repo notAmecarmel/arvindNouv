@@ -216,7 +216,7 @@ function Hero({ navigate }) {
               Surgical<br /><em>Precision,</em><br />Human Care
             </h1>
             <p className="hero-subtitle">
-              Specialist in maxillofacial surgery and facial reconstruction — restoring function, confidence, and the face you recognise.
+              Specialist in <b>maxillofacial surgery</b> and <b>facial reconstruction</b> — restoring function, confidence, and the face you recognise.
             </p>
             <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.95rem", color: "rgba(248,245,240,0.65)", marginBottom: "2rem" }}>
               Consultations at PACE Hospitals, Hyderabad · +91 83310 03232
