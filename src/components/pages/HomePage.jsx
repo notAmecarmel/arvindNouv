@@ -4,7 +4,7 @@ import {
   TreatmentCard, TestimonialCard, ImageBlock, ConsultCTA
 } from "../ui/SharedComponents";
 import hero2 from "../../assets/hero2.jpeg";
-
+import jawGraphic from "../../assets/jaw.png";
 /* ── Hero Section ── */
 function Hero({ navigate }) {
   return (
@@ -51,8 +51,20 @@ function Hero({ navigate }) {
         .hero-photo-placeholder {
           width: 100%;
           height: 100%;
-          background: linear-gradient(160deg, #3C3830 0%, #2C2820 50%, #1A1A18 100%);
           position: relative;
+
+          background:
+            url(${jawGraphic}) no-repeat right center,
+            linear-gradient(
+              160deg,
+              #3C3830 0%,
+              #2C2820 50%,
+              #1A1A18 100%
+            );
+
+          background-size: 60%, cover;
+          background-position: 60% center;
+          opacity: 0.25;
         }
         .hero-photo-overlay {
           position: absolute;
@@ -193,18 +205,6 @@ function Hero({ navigate }) {
 
         <div className="hero-photo-area">
           <div className="hero-photo-placeholder">
-            {/* Surgeon portrait placeholder */}
-            <div style={{
-              position: "absolute", inset: 0,
-              display: "flex", alignItems: "center", justifyContent: "center",
-              opacity: 0.15,
-            }}>
-              <div style={{
-                width: "200px", height: "280px",
-                borderRadius: "50% 50% 0 0 / 60% 60% 0 0",
-                background: "var(--stone)",
-              }} />
-            </div>
           </div>
           <div className="hero-photo-overlay" />
         </div>
