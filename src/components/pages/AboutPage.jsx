@@ -3,38 +3,15 @@ import { SectionLabel, SectionHeading, ImageBlock, ConsultCTA } from "../ui/Shar
 
 function PageHero() {
   return (
-    <div style={{
-      paddingTop: "10rem",
-      paddingBottom: "5rem",
-      background: "var(--slate-deep)",
-      position: "relative",
-      overflow: "hidden",
-    }}>
-      <div style={{
-        position: "absolute", inset: 0,
-        background: "radial-gradient(ellipse at 70% 50%, rgba(184,151,90,0.08) 0%, transparent 60%)",
-      }} />
+    <div className="page-hero">
+      <div className="page-hero-overlay" />
       <div className="container">
-        <div style={{ maxWidth: "600px" }}>
+        <div className="page-hero-copy">
           <SectionLabel>About</SectionLabel>
-          <h1 style={{
-            fontFamily: "var(--font-display)",
-            fontSize: "clamp(2.5rem, 5vw, 4rem)",
-            color: "var(--ivory)",
-            fontWeight: 400,
-            letterSpacing: "-0.02em",
-            lineHeight: 1.05,
-            marginBottom: "1.5rem",
-          }}>
+          <h1 className="about-heading-large" style={{ color: "var(--ivory)", fontWeight: 400, marginBottom: "1.5rem" }}>
             The Surgeon Behind<br /><em style={{ fontStyle: "italic", color: "var(--gold-light)" }}>The Practice</em>
           </h1>
-          <p style={{
-            fontFamily: "var(--font-serif)",
-            fontSize: "1.05rem",
-            color: "rgba(248,245,240,0.55)",
-            fontStyle: "italic",
-            lineHeight: 1.8,
-          }}>
+          <p className="about-copy" style={{ color: "rgba(248,245,240,0.55)", fontStyle: "italic" }}>
             Rigorous training. Years of practice. An unwavering commitment to the patient in front of him.
           </p>
         </div>
@@ -45,38 +22,23 @@ function PageHero() {
 
 function Biography() {
   return (
-    <section style={{ padding: "7rem 0", background: "var(--white)" }}>
+    <section className="bio-section">
       <div className="container">
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1.8fr", gap: "6rem", alignItems: "start" }}>
+        <div className="bio-grid">
           <div>
-            <div style={{ position: "relative" }}>
-              <div className="intro-image">
-                <img src={hero2} alt="Dr. B. Arvind" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+            <div className="bio-image-wrapper">
+              <div className="bio-image">
+                <img className="bio-image__img" src={hero2} alt="Dr. B. Arvind" />
               </div>
-              <div style={{
-                position: "absolute",
-                bottom: "-1.5rem",
-                right: "-1.5rem",
-                width: "60%",
-                padding: "1.5rem",
-                background: "var(--slate-deep)",
-                border: "1px solid rgba(184,151,90,0.2)",
-              }}>
-                <div style={{ fontFamily: "var(--font-display)", fontSize: "2rem", color: "var(--gold)", lineHeight: 1, marginBottom: "0.4rem" }}>BDS · MDS</div>
-                <div style={{ fontFamily: "var(--font-sans)", fontSize: "0.72rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--stone-dark)" }}>RGUHS · HCG Bengaluru · RCS London</div>
+              <div className="degree-card">
+                <div className="degree-title">BDS · MDS</div>
+                <div className="degree-meta">RGUHS · HCG Bengaluru · RCS London</div>
               </div>
             </div>
 
-            <div style={{ marginTop: "3.5rem" }}>
+            <div className="bio-affiliation">
               <SectionLabel>Hospital Affiliations</SectionLabel>
-              <div style={{
-                fontFamily: "var(--font-sans)",
-                fontSize: "0.95rem",
-                color: "var(--stone-dark)",
-                padding: "0.75rem 0",
-                borderBottom: "1px solid var(--ivory-deep)",
-                letterSpacing: "0.04em",
-              }}>
+              <div className="bio-affiliation-note">
                 PACE Hospitals, Hyderabad
               </div>
             </div>
@@ -84,17 +46,9 @@ function Biography() {
 
           <div>
             <SectionLabel>Biography</SectionLabel>
-            <h2 style={{
-              fontFamily: "var(--font-display)",
-              fontSize: "2.2rem",
-              color: "var(--slate-deep)",
-              fontWeight: 400,
-              letterSpacing: "-0.02em",
-              marginBottom: "2rem",
-              lineHeight: 1.1,
-            }}>
+<h2 className="about-heading-medium" style={{ color: "var(--slate-deep)", fontWeight: 400, marginBottom: "2rem" }}>
               Dr. B. Arvind<br />
-              <span style={{ fontSize: "1rem", fontFamily: "var(--font-sans)", letterSpacing: "0.1em", color: "var(--gold)", textTransform: "uppercase" }}>BDS · MDS · RCS Fellow · Maxillofacial Surgeon</span>
+              <span className="bio-subhead" style={{ color: "var(--gold)" }}>BDS · MDS · RCS Fellow · Maxillofacial Surgeon</span>
             </h2>
 
             {[
@@ -114,16 +68,9 @@ function Biography() {
               </p>
             ))}
 
-            <div style={{
-              padding: "2rem",
-              borderLeft: "2px solid var(--gold)",
-              background: "var(--ivory)",
-              margin: "2.5rem 0",
-              fontFamily: "var(--font-serif)",
-              fontSize: "1.15rem",
+            <div className="quote-box about-quote" style={{
               fontStyle: "italic",
               color: "var(--slate-deep)",
-              lineHeight: 1.7,
             }}>
               "My first responsibility is always to the patient: to offer clear options, honest guidance, and surgery only when it truly improves their health and quality of life."
             </div>
@@ -156,36 +103,22 @@ function Credentials() {
   ];
 
   return (
-    <section style={{ padding: "7rem 0", background: "var(--ivory)" }}>
+    <section className="credentials-section">
       <div className="container">
         <SectionHeading eyebrow="Credentials" title="Education & Recognition" />
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem" }}>
+        <div className="credentials-grid">
           {sections.map((sec) => (
             <div key={sec.title}>
-              <h3 style={{
-                fontFamily: "var(--font-sans)",
-                fontSize: "0.7rem",
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                color: "var(--gold)",
-                marginBottom: "2rem",
-              }}>
+              <h3 className="credential-title">
                 {sec.title}
               </h3>
               {sec.items.map((item) => (
-                <div key={item.label} style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "baseline",
-                  gap: "1rem",
-                  padding: "1.1rem 0",
-                  borderBottom: "1px solid var(--ivory-deep)",
-                }}>
-                  <span style={{ fontFamily: "var(--font-serif)", fontSize: "1rem", color: "var(--slate-deep)", fontWeight: 500 }}>
+                <div key={item.label} className="credential-row">
+                  <span className="credential-label">
                     {item.label}
                   </span>
-                  <span style={{ fontFamily: "var(--font-sans)", fontSize: "0.75rem", color: "var(--stone-mid)", letterSpacing: "0.04em", textAlign: "right" }}>
+                  <span className="credential-detail">
                     {item.detail}
                   </span>
                 </div>
@@ -200,10 +133,10 @@ function Credentials() {
 
 function Publications() {
   return (
-    <section style={{ padding: "6rem 0", background: "var(--white)" }}>
+    <section className="publications-section">
       <div className="container">
         <SectionHeading eyebrow="About the Surgeon" title="Focused Surgical Care in Oral & Maxillofacial Surgery" />
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem" }}>
+        <div className="publications-grid">
           {[
             {
               title: "Clinical Focus",
@@ -225,12 +158,9 @@ function Publications() {
           ].map((card, i) => {
             const isVideo = card.video;
             return (
-              <div key={i} style={{
-                padding: isVideo ? 0 : "2rem",
-                background: isVideo ? "transparent" : "var(--ivory)",
-                border: isVideo ? "none" : "1px solid var(--ivory-deep)",
-                transition: "border-color 0.3s, transform 0.3s",
-              }}
+              <div
+                key={i}
+                className={isVideo ? "publication-card publication-card--video" : "publication-card"}
                 onMouseEnter={e => {
                   if (!isVideo) {
                     e.currentTarget.style.borderColor = "var(--gold)";
@@ -245,23 +175,23 @@ function Publications() {
                 }}
               >
                 {!card.video && (
-                  <div style={{ fontFamily: "var(--font-sans)", fontSize: "0.75rem", letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--gold)", marginBottom: "0.8rem" }}>
+                  <div className="publication-card-title">
                     {card.title}
                   </div>
                 )}
                 {card.video ? (
-                  <div style={{ position: "relative", paddingTop: "56.25%", width: "100%", overflow: "hidden", background: "#000" }}>
+                  <div className="video-card">
                     <iframe
                       src={card.src}
                       title="YouTube video player"
-                      style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: 0 }}
+                      className="video-card__iframe"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       referrerPolicy="strict-origin-when-cross-origin"
                       allowFullScreen
                     />
                   </div>
                 ) : (
-                  <div style={{ fontFamily: "var(--font-serif)", fontSize: "1rem", color: "var(--slate-deep)", lineHeight: 1.8 }}>
+                  <div className="publication-copy">
                     {card.content}
                   </div>
                 )}
