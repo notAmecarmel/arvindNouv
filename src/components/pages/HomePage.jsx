@@ -373,7 +373,7 @@ function SurgeonIntro({ navigate }) {
                 "Every face tells a story. My role is to restore what belongs there — function, symmetry, and the quiet confidence that comes with it."
               </div>
 
-              <p className="intro-body" style={{ fontSize: "0.9rem" }}>
+              <p className="intro-body">
                 His practice spans complex jaw reconstruction, facial trauma, TMJ disorders, and surgical facial aesthetics — approached with the precision of a specialist and the empathy of a physician.
               </p>
 
