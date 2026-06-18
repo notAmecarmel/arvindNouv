@@ -253,7 +253,6 @@ function Hero({ navigate }) {
           ))}
         </div>
 
-        <div className="hero-scroll">Scroll to explore</div>
       </section>
     </>
   );
