@@ -27,7 +27,7 @@ export default function ContactPage({ navigate }) {
   const [submitted, setSubmitted] = useState(false);
 
   const [loading, setLoading] = useState(false);
-  
+
   const handleChange = (e) => {
     setForm({
       ...form,
@@ -55,9 +55,12 @@ export default function ContactPage({ navigate }) {
         body: JSON.stringify(form)
       }
     );
+    console.log("STATUS:", response.status);
 
     const data = await response.json();
+    console.log("RAW RESPONSE:", text);
 
+    alert(text);  
     if (data.success) {
       setSubmitted(true);
     }
