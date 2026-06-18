@@ -345,6 +345,22 @@ export default function ContactPage({ navigate }) {
             }}
           >
             {/* Contact Form */}
+            submitted ? (
+
+              <div style={{
+                textAlign: "center",
+                padding: "4rem 2rem"
+              }}>
+                <h2>Thank You</h2>
+
+                <p>
+                  Your message has been received.
+                  <br />
+                  Our team will get back to you shortly.
+                </p>
+              </div>
+
+            ) : (
             <div>
               <div style={{ marginBottom: "2.5rem" }}>
                 <SectionLabel>Send a Message</SectionLabel>
@@ -425,6 +441,7 @@ export default function ContactPage({ navigate }) {
                 {loading ? "Sending..." : "Send Message"}
               </button>
             </div>
+             ) 
 
             {/* Quick Actions */}
             <div>
