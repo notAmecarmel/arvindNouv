@@ -36,42 +36,45 @@ export default function ContactPage({ navigate }) {
   };
   const handleSubmit = async () => {
 
-  if (!form.name || !form.email || !form.message) {
-    alert("Please fill required fields");
-    return;
-  }
+    if (!form.name || !form.email || !form.message) {
+      alert("Please fill required fields");
+      return;
+    }
 
-  setLoading(true);
+    setLoading(true);
 
-  try {
+    try {
 
-    const response = await fetch(
-      "/api/contact",
-      {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
         body: JSON.stringify(form)
+      });
+
+      console.log("STATUS:", response.status);
+
+      const data = await response.json();
+
+      console.log("DATA:", data);
+
+      if (data.success) {
+        setSubmitted(true);
+      } else {
+        alert("Failed to send message");
       }
-    );
-    console.log("STATUS:", response.status);
 
-    const data = await response.json();
-    console.log("RAW RESPONSE:", text);
+    } catch (err) {
 
-    alert(text);  
-    if (data.success) {
-      setSubmitted(true);
+      console.error(err);
+      alert("Failed to send message");
+
     }
 
-  } catch (err) {
-    console.error(err);
-    alert("Failed to send message");
-  }
+    setLoading(false);
 
-  setLoading(false);
-};
+  };
   return (
     <>
       <style>{`
