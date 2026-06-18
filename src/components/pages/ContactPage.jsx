@@ -345,7 +345,7 @@ export default function ContactPage({ navigate }) {
             }}
           >
             {/* Contact Form */}
-            submitted ? (
+            {submitted ? (
 
               <div style={{
                 textAlign: "center",
@@ -441,7 +441,7 @@ export default function ContactPage({ navigate }) {
                 {loading ? "Sending..." : "Send Message"}
               </button>
             </div>
-             ) 
+            )}
 
             {/* Quick Actions */}
             <div>
