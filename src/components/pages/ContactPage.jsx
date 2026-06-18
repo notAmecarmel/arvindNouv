@@ -3,13 +3,23 @@ import { useState } from "react";
 
 const LOCATIONS = [
   {
+    name: "PACE Hospitals — HITEC City",
+    address:
+      "PACE Hospitals, HITEC City, Hyderabad",
+    phone: "+91 8331003232",
+    hours: "Monday – Saturday: 9 AM – 5 PM",
+    primary: true,
+    mapEmbed:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4024.3347462930205!2d78.38166117540446!3d17.446908283450444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb916020093aa3%3A0xe37f244ddf5444a7!2sPACE%20Hospitals%20-%20Best%20Hospital%20in%20Hyderabad%2C%20HITEC%20City!5e1!3m2!1sen!2sin!4v1781794293394!5m2!1sen!2sin",
+  },
+  {
     name: "Dhriti Dental — Nallagandla",
     address:
       "Third Floor, Mallikarjuna Nilayam\nNear Community Hall, Nallagandla\nSerilingampalle (M), Hyderabad, Telangana - 500019",
     phone: "+91 8331003232",
     hours:
       "Monday – Saturday: 10 AM – 9 PM\nSunday: 11 AM – 5 PM",
-    primary: true,
+    primary: false,
     mapEmbed:
       "https://www.google.com/maps?q=Dhriti+Dental+Nallagandla+Hyderabad&output=embed",
   },
@@ -107,6 +117,12 @@ export default function ContactPage({ navigate }) {
           border: 0;
         }
 
+        .locations-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 1.5rem;
+        }
+
         .contact-field {
           width: 100%;
           padding: 0.85rem 1rem;
@@ -138,6 +154,11 @@ export default function ContactPage({ navigate }) {
 
           .form-grid {
             grid-template-columns: 1fr !important;
+          }
+
+          .locations-grid {
+            grid-template-columns: 1fr !important;
+            gap: 1.5rem !important;
           }
         }
       `}</style>
@@ -200,13 +221,7 @@ export default function ContactPage({ navigate }) {
             <span className="t-label">Our Location</span>
           </div>
 
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr",
-              gap: "1.5rem",
-            }}
-          >
+          <div className="locations-grid">
             {LOCATIONS.map((loc) => (
               <div
                 key={loc.name}
@@ -215,25 +230,7 @@ export default function ContactPage({ navigate }) {
                 }`}
               >
                 <div style={{ position: "relative" }}>
-                  {loc.primary && (
-                    <div
-                      style={{
-                        position: "absolute",
-                        top: "1rem",
-                        left: "1rem",
-                        background: "var(--gold)",
-                        color: "#fff",
-                        fontFamily: "var(--font-sans)",
-                        fontSize: "0.55rem",
-                        letterSpacing: "0.15em",
-                        textTransform: "uppercase",
-                        padding: "0.3rem 0.7rem",
-                        zIndex: 2,
-                      }}
-                    >
-                      Main Branch
-                    </div>
-                  )}
+                  {/* Main Branch badge removed per design */}
 
                   <iframe
                     title={loc.name}
