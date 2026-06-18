@@ -297,7 +297,7 @@ export function ConsultCTA({ navigate, light = false }) {
         margin: "0 auto 2.5rem",
         lineHeight: 1.7,
       }}>
-        Every transformation begins with understanding. Schedule a private consultation with Dr. Mehta.
+        Every transformation begins with understanding. Schedule a private consultation with Dr. Arvind.
       </p>
       <button className="btn btn--gold" onClick={() => navigate("/consultation")}>
         Request a Consultation

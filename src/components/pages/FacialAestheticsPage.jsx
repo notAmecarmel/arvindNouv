@@ -110,7 +110,7 @@ function PhilosophySection() {
             </h2>
 
             {[
-              "Dr. Mehta's aesthetic philosophy begins with restraint. The goal is never transformation — it is refinement.",
+              "Dr. Arvinds's aesthetic philosophy begins with restraint. The goal is never transformation — it is refinement.",
               "Every procedure is preceded by detailed facial analysis, proportion mapping, and an honest conversation about what surgery can and cannot achieve.",
               "The result should make you look like yourself — only rested, balanced, and confident.",
             ].map((p, i) => (
