@@ -185,6 +185,9 @@ function Hero({ navigate }) {
           background: rgba(184,151,90,0.25);
           flex-shrink: 0;
         }
+        .hero-offset-container {
+          margin-left: 140px;
+        }
         @media (max-width: 768px) {
           .hero {
             padding-top: 6rem;
@@ -196,6 +199,9 @@ function Hero({ navigate }) {
             line-height: 1.4;
           }
           .hero-credentials-bar { gap: 1.5rem; }
+          .hero-offset-container {
+            margin-left: 0;
+          }
         }
       `}</style>
 
@@ -209,7 +215,7 @@ function Hero({ navigate }) {
           <div className="hero-photo-overlay" />
         </div>
 
-        <div className="container">
+        <div className="container hero-offset-container">
           <div className="hero-content">
             <div className="hero-eyebrow">PACE Hospitals, Hyderabad · India's Foremost Facial Surgeon</div>
             <h1 className="hero-title">
