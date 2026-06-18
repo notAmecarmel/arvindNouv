@@ -1,4 +1,4 @@
-/*export default async function handler(req, res) {
+export default async function handler(req, res) {
 
   console.log("REQUEST METHOD:", req.method);
   console.log("REQUEST BODY:", req.body);
@@ -44,13 +44,13 @@
     });
 
   }
-}*/
+}
 
-export default async function handler(req, res) {
+/*export default async function handler(req, res) {
 
   return res.status(200).json({
     success: true,
     body: req.body
   });
 
-}
+}*/
