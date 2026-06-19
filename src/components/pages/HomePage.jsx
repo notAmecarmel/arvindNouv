@@ -447,28 +447,43 @@ function SignatureProcedures({ navigate }) {
   ];
 
   return (
-    <section style={{ padding: "7rem 0", background: "var(--white)" }}>
-      <div className="container">
-        <SectionHeading
-          eyebrow="Expertise"
-          title="Areas of Surgical Expertise"
-          subtitle="Clinical areas where the practice provides specialist care."
-        />
+    <>
+      <style>{`
+        .expertise-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1.75rem;
+        }
+        @media (max-width: 768px) {
+          .expertise-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+      `}</style>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "1.75rem" }}>
-          {expertise.map((e, i) => (
-            <div key={i} style={{ padding: "1.5rem", border: "1px solid var(--ivory-deep)", background: "var(--white)", minHeight: "180px" }}>
-              <div style={{ fontFamily: "var(--font-display)", fontSize: "1.05rem", color: "var(--slate-deep)", marginBottom: "0.6rem" }}>{e.title}</div>
-              <div style={{ fontFamily: "var(--font-serif)", fontSize: "0.97rem", color: "var(--stone-dark)", lineHeight: 1.6 }}>{e.body}</div>
-            </div>
-          ))}
-        </div>
+      <section style={{ padding: "7rem 0", background: "var(--white)" }}>
+        <div className="container">
+          <SectionHeading
+            eyebrow="Expertise"
+            title="Areas of Surgical Expertise"
+            subtitle="Clinical areas where the practice provides specialist care."
+          />
 
-        <div style={{ textAlign: "center", marginTop: "2.25rem" }}>
-          <button className="btn btn--outline" onClick={() => navigate("/treatments")}>View All Treatments</button>
+          <div className="expertise-grid">
+            {expertise.map((e, i) => (
+              <div key={i} style={{ padding: "1.5rem", border: "1px solid var(--ivory-deep)", background: "var(--white)", minHeight: "180px" }}>
+                <div style={{ fontFamily: "var(--font-display)", fontSize: "1.05rem", color: "var(--slate-deep)", marginBottom: "0.6rem" }}>{e.title}</div>
+                <div style={{ fontFamily: "var(--font-serif)", fontSize: "0.97rem", color: "var(--stone-dark)", lineHeight: 1.6 }}>{e.body}</div>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ textAlign: "center", marginTop: "2.25rem" }}>
+            <button className="btn btn--outline" onClick={() => navigate("/treatments")}>View All Treatments</button>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
 
