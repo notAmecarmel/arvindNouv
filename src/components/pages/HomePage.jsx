@@ -4,8 +4,8 @@ import {
   TreatmentCard, TestimonialCard, ImageBlock, ConsultCTA
 } from "../ui/SharedComponents";
 import "./HomePage.css";
-import hero2 from "../../assets/hero2.jpeg";
-import jawGraphic from "../../assets/jaw.png";
+import hero2 from "../../assets/hero2.webp";
+import jawGraphic from "../../assets/jaw.webp";
 /* ── Hero Section ── */
 function Hero({ navigate }) {
   const heroPhotoStyle = {

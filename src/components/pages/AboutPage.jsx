@@ -1,4 +1,4 @@
-import hero2 from "../../assets/hero2.jpeg";
+import hero2 from "../../assets/hero2.webp";
 import { SectionLabel, SectionHeading, ImageBlock, ConsultCTA } from "../ui/SharedComponents";
 import "./AboutPage.css";
 
