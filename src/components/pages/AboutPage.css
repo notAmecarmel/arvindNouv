@@ -1,0 +1,187 @@
+.about-heading-large {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4.5vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.about-heading-medium {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.about-copy {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  line-height: 1.85;
+  letter-spacing: 0.01em;
+}
+
+.bio-section {
+  padding: 8rem 0;
+  background: var(--white);
+}
+
+.bio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 6rem;
+  align-items: flex-start;
+}
+
+.bio-image-wrapper {
+  position: relative;
+}
+
+.bio-image-frame::before {
+  content: '';
+  position: absolute;
+  top: -1.25rem;
+  left: -1.25rem;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  border: 1px solid var(--gold);
+  z-index: 0;
+}
+
+.bio-image {
+  position: relative;
+  z-index: 1;
+  aspect-ratio: 2.5/3;
+  background: linear-gradient(160deg, #EDE8E0 0%, #C8BEA8 100%);
+  overflow: hidden;
+}
+
+.bio-image__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bio-subhead {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.bio-affiliation {
+  margin-top: 4rem;
+}
+
+.bio-affiliation-note {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--stone-dark);
+  margin-top: 0.75rem;
+}
+
+.degree-card {
+  position: absolute;
+  bottom: -40px;
+  left: 20px;
+  background: var(--white);
+  border: 1px solid var(--ivory-deep);
+  padding: 1.5rem 1.75rem;
+  min-width: 200px;
+  box-shadow: var(--shadow-md);
+}
+
+.degree-title {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 0.25rem;
+}
+
+.degree-meta {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--stone-dark);
+}
+
+.quote-box {
+  padding: 2rem;
+  border-left: 3px solid var(--gold);
+  margin: 3rem 0;
+  background: var(--ivory);
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--slate-deep);
+}
+
+.about-quote {
+  background: var(--ivory-deep);
+  font-style: italic;
+}
+
+.credentials-section {
+  padding: 7rem 0;
+  background: var(--white);
+}
+
+.credentials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  margin-top: 3rem;
+}
+
+.credential-group {
+  background: var(--ivory);
+  padding: 2rem;
+  border-radius: 4px;
+}
+
+.credential-group-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--slate-deep);
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+.credential-item {
+  margin-bottom: 1.5rem;
+}
+
+.credential-label {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 0.3rem;
+}
+
+.credential-detail {
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  color: var(--stone-dark);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .bio-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .credentials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .degree-card {
+    position: static;
+    margin-top: 1.5rem;
+  }
+}

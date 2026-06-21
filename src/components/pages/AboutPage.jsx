@@ -1,5 +1,6 @@
 import hero2 from "../../assets/hero2.jpeg";
 import { SectionLabel, SectionHeading, ImageBlock, ConsultCTA } from "../ui/SharedComponents";
+import "./AboutPage.css";
 
 function PageHero() {
   return (

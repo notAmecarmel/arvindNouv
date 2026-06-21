@@ -1,0 +1,171 @@
+/* ── Stat Card ── */
+.stat-card {
+  padding: 2.5rem;
+  border: 1px solid var(--ivory-deep);
+  background: var(--white);
+  text-align: center;
+  transition: all 0.4s var(--ease-luxury);
+}
+
+.stat-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.stat-label {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--stone-dark);
+  margin-bottom: 0.3rem;
+}
+
+.stat-note {
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  color: var(--stone-mid);
+  font-style: italic;
+}
+
+/* ── Treatment Card ── */
+.tx-card {
+  padding: 2.5rem 2rem;
+  background: var(--white);
+  border: 1px solid var(--ivory-deep);
+  cursor: pointer;
+  transition: all 0.4s var(--ease-luxury);
+  position: relative;
+  overflow: hidden;
+}
+
+.tx-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s var(--ease-luxury);
+}
+
+.tx-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.tx-card:hover::before {
+  transform: scaleX(1);
+}
+
+.tx-icon {
+  font-size: 1.8rem;
+  margin-bottom: 1.25rem;
+  display: block;
+  opacity: 0.6;
+}
+
+.tx-title {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--slate-deep);
+  margin-bottom: 0.6rem;
+  line-height: 1.3;
+}
+
+.tx-tagline {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--stone-mid);
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+}
+
+.tx-arrow {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  font-family: var(--font-sans);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ── Testimonial Card ── */
+.testimonial-card {
+  padding: 2.5rem;
+  background: var(--white);
+  border: 1px solid var(--ivory-deep);
+  position: relative;
+}
+
+.testimonial-card.light {
+  background: var(--surface-overlay);
+  border: 1px solid var(--color-border);
+}
+
+.testimonial-quote-mark {
+  font-family: var(--font-display);
+  font-size: 5rem;
+  line-height: 0.5;
+  color: var(--gold);
+  opacity: 0.35;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.testimonial-text {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--stone-dark);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-card.light .testimonial-text {
+  color: var(--ivory);
+}
+
+.testimonial-name {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--slate-deep);
+  text-transform: uppercase;
+}
+
+.testimonial-card.light .testimonial-name {
+  color: var(--ivory);
+}
+
+.testimonial-meta {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--color-accent);
+  letter-spacing: 0.1em;
+  margin-top: 0.25rem;
+}
+
+.testimonial-stars {
+  color: var(--color-accent);
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}

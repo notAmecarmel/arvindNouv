@@ -1,13 +1,29 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
 import Navigation from "./components/layout/Navigation";
 import Footer from "./components/layout/Footer";
-import HomePage from "./components/pages/HomePage";
-import AboutPage from "./components/pages/AboutPage";
-// Removed unused page imports: TreatmentsPage, TreatmentDetailPage, PatientStoriesPage, MediaPage
-import ConsultationPage from "./components/pages/ConsultationPage";
-import ContactPage from "./components/pages/ContactPage";
 import "./styles/globals.css";
- 
+
+// Lazy-loaded page components for route-level code splitting
+const HomePage = lazy(() => import("./components/pages/HomePage"));
+const AboutPage = lazy(() => import("./components/pages/AboutPage"));
+const ConsultationPage = lazy(() => import("./components/pages/ConsultationPage"));
+const ContactPage = lazy(() => import("./components/pages/ContactPage"));
+
+// Simple loading fallback component
+const LoadingFallback = () => (
+  <div style={{
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    minHeight: "60vh",
+    fontFamily: "var(--font-serif)",
+    fontSize: "1rem",
+    color: "var(--stone-dark)",
+  }}>
+    Loading...
+  </div>
+);
+
 const ROUTES = {
   "/": HomePage,
   "/about": AboutPage,
@@ -35,12 +51,14 @@ export default function App() {
   window.navigate = navigate;
  
   const PageComponent = ROUTES[currentPath] || HomePage;
- 
+
   return (
     <div className="app-root">
       <Navigation currentPath={currentPath} navigate={navigate} />
       <main>
-        <PageComponent navigate={navigate} />
+        <Suspense fallback={<LoadingFallback />}>
+          <PageComponent navigate={navigate} />
+        </Suspense>
       </main>
       <Footer navigate={navigate} />
     </div>

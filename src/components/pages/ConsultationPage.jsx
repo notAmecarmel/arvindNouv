@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { SectionLabel } from "../ui/SharedComponents";
+import "./ConsultationPage.css";
 
 export default function ConsultationPage({ navigate }) {
   const [form, setForm] = useState({
@@ -43,157 +44,24 @@ export default function ConsultationPage({ navigate }) {
 };
 
   return (
-    <>
-      <style>{`
-        .consult-page {
-          min-height: 100vh;
-          background: var(--slate-deep);
-        }
-        .consult-hero {
-          padding-top: 10rem;
-          padding-bottom: 4rem;
-          border-bottom: 1px solid var(--color-border);
-        }
-        .consult-body {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          min-height: 70vh;
-        }
-        .consult-form-panel {
-          background: var(--ivory);
-          padding: 5rem 4rem;
-        }
-        .consult-info-panel {
-          padding: 5rem 4rem;
-          background: var(--slate-deep);
-        }
-        .form-group {
-          margin-bottom: 1.75rem;
-        }
-        .form-label {
-          display: block;
-          font-family: var(--font-sans);
-          font-size: 0.9rem;
-          letter-spacing: 0.12em;
-          text-transform: uppercase;
-          color: var(--text-secondary);
-          margin-bottom: 0.6rem;
-        }
-        .form-input {
-          width: 100%;
-          padding: 0.85rem 1rem;
-          background: var(--white);
-          border: 1px solid var(--stone);
-          border-radius: 0;
-          font-family: var(--font-sans);
-          font-size: 0.88rem;
-          color: var(--slate-deep);
-          outline: none;
-          transition: border-color 0.3s;
-          letter-spacing: 0.03em;
-        }
-        .form-input:focus { border-color: var(--color-accent); }
-        .form-input::placeholder { color: var(--stone-mid); }
-        .form-select {
-          width: 100%;
-          padding: 0.85rem 1rem;
-          background: var(--white);
-          border: 1px solid var(--stone);
-          border-radius: 0;
-          font-family: var(--font-sans);
-          font-size: 0.88rem;
-          color: var(--slate-deep);
-          outline: none;
-          transition: border-color 0.3s;
-          appearance: none;
-          cursor: pointer;
-        }
-        .form-select:focus { border-color: var(--color-accent); }
-        .form-textarea {
-          width: 100%;
-          padding: 0.85rem 1rem;
-          background: var(--white);
-          border: 1px solid var(--stone);
-          border-radius: 0;
-          font-family: var(--font-sans);
-          font-size: 0.88rem;
-          color: var(--slate-deep);
-          outline: none;
-          transition: border-color 0.3s;
-          resize: vertical;
-          min-height: 120px;
-          letter-spacing: 0.03em;
-          line-height: 1.6;
-        }
-        .form-textarea:focus { border-color: var(--color-accent); }
-        .time-options {
-          display: grid;
-          grid-template-columns: 1fr 1fr 1fr;
-          gap: 0.5rem;
-        }
-        .time-option {
-          padding: 0.65rem;
-          border: 1px solid var(--stone);
-          text-align: center;
-          cursor: pointer;
-          font-family: var(--font-sans);
-          font-size: 0.9rem;
-          letter-spacing: 0.08em;
-          color: var(--stone-dark);
-          transition: all 0.3s;
-          background: var(--white);
-        }
-        .time-option.selected {
-          border-color: var(--gold);
-          background: var(--gold);
-          color: var(--white);
-        }
-        .info-item {
-          margin-bottom: 2.5rem;
-        }
-        .info-label {
-          font-family: var(--font-sans);
-          font-size: 0.6rem;
-          letter-spacing: 0.2em;
-          text-transform: uppercase;
-          color: var(--gold);
-          margin-bottom: 0.5rem;
-          display: block;
-        }
-        .info-value {
-          font-family: var(--font-serif);
-          font-size: 0.95rem;
-          color: var(--ivory);
-          line-height: 1.7;
-        }
-        .success-state {
-          text-align: center;
-          padding: 4rem 2rem;
-        }
-        @media (max-width: 900px) {
-          .consult-body { grid-template-columns: 1fr; }
-          .consult-form-panel, .consult-info-panel { padding: 3rem 1.5rem; }
-        }
-      `}</style>
-
-      <div className="consult-page">
-        {/* Hero */}
-        <div className="consult-hero">
-          <div className="container">
-            <div style={{ maxWidth: "640px" }}>
-              <SectionLabel>Consultation</SectionLabel>
-              <h1 style={{
-                fontFamily: "var(--font-display)",
-                fontSize: "clamp(2.2rem, 4.5vw, 3.5rem)",
-                color: "var(--ivory)",
-                fontWeight: 400,
-                letterSpacing: "-0.02em",
-                lineHeight: 1.05,
-                marginBottom: "1.25rem",
-              }}>
-                Begin with a Conversation.<br />
-                <em style={{ fontStyle: "italic", color: "var(--gold-light)" }}>Nothing more.</em>
-              </h1>
+    <div className="consult-page">
+      {/* Hero */}
+      <div className="consult-hero">
+        <div className="container">
+          <div style={{ maxWidth: "640px" }}>
+            <SectionLabel>Consultation</SectionLabel>
+            <h1 style={{
+              fontFamily: "var(--font-display)",
+              fontSize: "clamp(2.2rem, 4.5vw, 3.5rem)",
+              color: "var(--ivory)",
+              fontWeight: 400,
+              letterSpacing: "-0.02em",
+              lineHeight: 1.05,
+              marginBottom: "1.25rem",
+            }}>
+              Begin with a Conversation.<br />
+              <em style={{ fontStyle: "italic", color: "var(--gold-light)" }}>Nothing more.</em>
+            </h1>
               <p style={{
                 fontFamily: "var(--font-serif)",
                 fontSize: "1rem",
@@ -404,6 +272,6 @@ export default function ConsultationPage({ navigate }) {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

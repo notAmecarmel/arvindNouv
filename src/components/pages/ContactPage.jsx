@@ -1,5 +1,6 @@
 import { SectionLabel } from "../ui/SharedComponents";
 import { useState } from "react";
+import "./ContactPage.css";
 
 const LOCATIONS = [
   {
@@ -88,82 +89,6 @@ export default function ContactPage({ navigate }) {
   };
   return (
     <>
-      <style>{`
-        .contact-hero {
-          padding-top: 10rem;
-          padding-bottom: 5rem;
-          background: var(--ivory);
-          border-bottom: 1px solid var(--ivory-deep);
-        }
-
-        .location-card {
-          background: var(--white);
-          border: 1px solid var(--ivory-deep);
-          overflow: hidden;
-          transition: all 0.35s;
-        }
-
-        .location-card:hover {
-          border-color: var(--gold);
-          box-shadow: var(--shadow-md);
-        }
-
-        .location-card.primary {
-          border-color: var(--gold);
-        }
-
-        .map-embed {
-          width: 100%;
-          height: 220px;
-          border: 0;
-        }
-
-        .locations-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 1.5rem;
-        }
-
-        .contact-field {
-          width: 100%;
-          padding: 0.85rem 1rem;
-          background: var(--white);
-          border: 1px solid var(--stone);
-          border-radius: 0;
-          font-family: var(--font-sans);
-          font-size: 0.88rem;
-          color: var(--slate-deep);
-          outline: none;
-          transition: border-color 0.3s;
-          margin-bottom: 1rem;
-          display: block;
-        }
-
-        .contact-field:focus {
-          border-color: var(--gold);
-        }
-
-        .contact-field::placeholder {
-          color: var(--stone-mid);
-        }
-
-        @media (max-width: 900px) {
-          .contact-grid {
-            grid-template-columns: 1fr !important;
-            gap: 4rem !important;
-          }
-
-          .form-grid {
-            grid-template-columns: 1fr !important;
-          }
-
-          .locations-grid {
-            grid-template-columns: 1fr !important;
-            gap: 1.5rem !important;
-          }
-        }
-      `}</style>
-
       {/* Hero Section */}
       <div className="contact-hero">
         <div className="container">
