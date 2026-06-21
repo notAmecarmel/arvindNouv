@@ -27,7 +27,7 @@ export function SectionHeading({ eyebrow, title, subtitle, centered = false, lig
         <p style={{
           fontFamily: "var(--font-serif)",
           fontSize: "1.05rem",
-          color: light ? "rgba(248,245,240,0.65)" : "var(--stone-dark)",
+          color: light ? "var(--ivory)" : "var(--stone-dark)",
           fontStyle: "italic",
           maxWidth: centered ? "540px" : "none",
           margin: centered ? "0 auto" : 0,
@@ -65,7 +65,7 @@ export function StatCard({ number, label, note }) {
         }
         .stat-label {
           font-family: var(--font-sans);
-          font-size: 0.72rem;
+          font-size: 0.9rem;
           letter-spacing: 0.15em;
           text-transform: uppercase;
           color: var(--stone-dark);
@@ -131,17 +131,17 @@ export function TreatmentCard({ title, tagline, icon, onClick }) {
         }
         .tx-tagline {
           font-family: var(--font-sans);
-          font-size: 0.78rem;
+          font-size: 0.95rem;
           color: var(--stone-mid);
           line-height: 1.6;
           letter-spacing: 0.02em;
         }
         .tx-arrow {
           margin-top: 1.5rem;
-          font-size: 0.7rem;
+          font-size: 0.9rem;
           letter-spacing: 0.15em;
           text-transform: uppercase;
-          color: var(--gold);
+          color: var(--color-accent);
           font-family: var(--font-sans);
           display: flex;
           align-items: center;
@@ -164,8 +164,8 @@ export function TestimonialCard({ quote, name, procedure, location, light = fals
       <style>{`
         .testimonial-card {
           padding: 2.5rem;
-          background: ${light ? "rgba(255,255,255,0.06)" : "var(--white)"};
-          border: 1px solid ${light ? "rgba(255,255,255,0.12)" : "var(--ivory-deep)"};
+          background: ${light ? "var(--surface-overlay)" : "var(--white)"};
+          border: ${light ? "1px solid var(--color-border)" : "1px solid var(--ivory-deep)"};
           position: relative;
         }
         .testimonial-quote-mark {
@@ -181,13 +181,13 @@ export function TestimonialCard({ quote, name, procedure, location, light = fals
           font-family: var(--font-serif);
           font-size: 1rem;
           font-style: italic;
-          color: ${light ? "rgba(248,245,240,0.8)" : "var(--stone-dark)"};
+          color: ${light ? "var(--ivory)" : "var(--stone-dark)"};
           line-height: 1.8;
           margin-bottom: 1.5rem;
         }
         .testimonial-name {
           font-family: var(--font-sans);
-          font-size: 0.78rem;
+          font-size: 0.95rem;
           font-weight: 500;
           letter-spacing: 0.1em;
           color: ${light ? "var(--ivory)" : "var(--slate-deep)"};
@@ -195,14 +195,14 @@ export function TestimonialCard({ quote, name, procedure, location, light = fals
         }
         .testimonial-meta {
           font-family: var(--font-sans);
-          font-size: 0.68rem;
-          color: var(--gold);
+          font-size: 0.9rem;
+          color: var(--color-accent);
           letter-spacing: 0.1em;
           margin-top: 0.25rem;
         }
         .testimonial-stars {
-          color: var(--gold);
-          font-size: 0.7rem;
+          color: var(--color-accent);
+          font-size: 0.9rem;
           letter-spacing: 0.1em;
           margin-bottom: 1rem;
         }
@@ -255,7 +255,7 @@ export function ImageBlock({ aspectRatio = "4/3", label, style = {} }) {
           alignItems: "center",
           justifyContent: "center",
           fontFamily: "var(--font-sans)",
-          fontSize: "0.65rem",
+          fontSize: "0.9rem",
           letterSpacing: "0.2em",
           textTransform: "uppercase",
           color: "var(--stone-mid)",
@@ -291,7 +291,7 @@ export function ConsultCTA({ navigate, light = false }) {
         fontFamily: "var(--font-serif)",
         fontSize: "1rem",
         fontStyle: "italic",
-        color: light ? "rgba(248,245,240,0.6)" : "var(--stone-dark)",
+        color: light ? "var(--ivory)" : "var(--stone-dark)",
         marginBottom: "2.5rem",
         maxWidth: "480px",
         margin: "0 auto 2.5rem",
@@ -299,7 +299,7 @@ export function ConsultCTA({ navigate, light = false }) {
       }}>
         Every transformation begins with understanding. Schedule a private consultation with Dr. Arvind.
       </p>
-      <button className="btn btn--gold" onClick={() => navigate("/consultation")}>
+      <button className="btn btn--primary" onClick={() => navigate("/consultation")}> 
         Request a Consultation
       </button>
     </div>

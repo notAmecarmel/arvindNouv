@@ -3,11 +3,7 @@ import Navigation from "./components/layout/Navigation";
 import Footer from "./components/layout/Footer";
 import HomePage from "./components/pages/HomePage";
 import AboutPage from "./components/pages/AboutPage";
-import TreatmentsPage from "./components/pages/TreatmentDetailPage";
-import TreatmentDetailPage from "./components/pages/TreatmentDetailPage";
-import FacialAestheticsPage from "./components/pages/FacialAestheticsPage";
-import PatientStoriesPage from "./components/pages/PatientStoriesPage";
-import MediaPage from "./components/pages/MediaPage";
+// Removed unused page imports: TreatmentsPage, TreatmentDetailPage, PatientStoriesPage, MediaPage
 import ConsultationPage from "./components/pages/ConsultationPage";
 import ContactPage from "./components/pages/ContactPage";
 import "./styles/globals.css";
@@ -15,11 +11,8 @@ import "./styles/globals.css";
 const ROUTES = {
   "/": HomePage,
   "/about": AboutPage,
-  "/treatments": TreatmentsPage,
-  "/treatments/jaw-correction": TreatmentDetailPage,
-  "/facial-aesthetics": FacialAestheticsPage,
-  "/patient-stories": PatientStoriesPage,
-  "/media": MediaPage,
+  "/treatments": HomePage,
+  "/treatments/jaw-correction": HomePage,
   "/consultation": ConsultationPage,
   "/contact": ContactPage,
 };

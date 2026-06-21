@@ -39,10 +39,8 @@ export default function Navigation({ currentPath, navigate }) {
           align-items: center;
           justify-content: space-between;
           padding: ${scrolled ? "1rem 2.5rem" : "1.6rem 2.5rem"};
-          background: ${scrolled
-            ? "rgba(248,245,240,0.97)"
-            : isHome ? "transparent" : "rgba(248,245,240,0.97)"};
-          border-bottom: ${scrolled ? "1px solid rgba(212,204,184,0.5)" : "none"};
+          background: ${scrolled ? "var(--white)" : isHome ? "transparent" : "var(--white)"};
+          border-bottom: ${scrolled ? "1px solid var(--color-border)" : "none"};
           backdrop-filter: ${scrolled || !isHome ? "blur(12px)" : "none"};
           transition: all 0.5s cubic-bezier(0.25,0.1,0.25,1);
         }
@@ -58,17 +56,17 @@ export default function Navigation({ currentPath, navigate }) {
           font-family: 'DM Serif Display', serif;
           font-size: 1.15rem;
           letter-spacing: 0.02em;
-          color: ${scrolled || !isHome ? "var(--slate-deep)" : "#fff"};
+          color: ${scrolled || !isHome ? "var(--slate-deep)" : "var(--ivory)"};
           line-height: 1;
           transition: color 0.5s;
         }
 
         .nav-logo-title {
           font-family: 'Jost', sans-serif;
-          font-size: 0.62rem;
+          font-size: 0.85rem;
           letter-spacing: 0.22em;
           text-transform: uppercase;
-          color: ${scrolled || !isHome ? "var(--gold)" : "rgba(255,255,255,0.7)"};
+          color: ${scrolled || !isHome ? "var(--gold)" : "var(--ivory)"};
           margin-top: 0.3rem;
           transition: color 0.5s;
         }
@@ -82,11 +80,11 @@ export default function Navigation({ currentPath, navigate }) {
 
         .nav-link {
           font-family: 'Jost', sans-serif;
-          font-size: 0.72rem;
+          font-size: 0.9rem;
           font-weight: 500;
           letter-spacing: 0.15em;
           text-transform: uppercase;
-          color: ${scrolled || !isHome ? "var(--stone-dark)" : "rgba(255,255,255,0.85)"};
+          color: ${scrolled || !isHome ? "var(--stone-dark)" : "var(--ivory)"};
           cursor: pointer;
           position: relative;
           padding-bottom: 2px;
@@ -110,12 +108,12 @@ export default function Navigation({ currentPath, navigate }) {
 
         .nav-cta {
           font-family: 'Jost', sans-serif;
-          font-size: 0.68rem;
+          font-size: 0.9rem;
           font-weight: 500;
           letter-spacing: 0.18em;
           text-transform: uppercase;
           padding: 0.65rem 1.5rem;
-          background: var(--gold);
+          background: var(--color-accent);
           color: #fff;
           border: none;
           cursor: pointer;
@@ -142,7 +140,7 @@ export default function Navigation({ currentPath, navigate }) {
           display: block;
           width: 22px;
           height: 1.5px;
-          background: ${scrolled || !isHome ? "var(--slate-deep)" : "#fff"};
+          background: ${scrolled || !isHome ? "var(--slate-deep)" : "var(--ivory)"};
           transition: all 0.3s;
         }
 

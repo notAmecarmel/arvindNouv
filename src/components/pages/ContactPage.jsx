@@ -277,7 +277,7 @@ export default function ContactPage({ navigate }) {
                       <div
                         style={{
                           fontFamily: "var(--font-sans)",
-                          fontSize: "0.58rem",
+                          fontSize: "0.9rem",
                           letterSpacing: "0.18em",
                           textTransform: "uppercase",
                           color: "var(--stone-mid)",
@@ -310,7 +310,7 @@ export default function ContactPage({ navigate }) {
                       display: "inline-block",
                       marginTop: "0.5rem",
                       fontFamily: "var(--font-sans)",
-                      fontSize: "0.68rem",
+                      fontSize: "0.9rem",
                       letterSpacing: "0.1em",
                       textTransform: "uppercase",
                       color: "var(--gold)",
@@ -527,7 +527,7 @@ export default function ContactPage({ navigate }) {
                     <div
                       style={{
                         fontFamily: "var(--font-sans)",
-                        fontSize: "0.62rem",
+                        fontSize: "0.9rem",
                         letterSpacing: "0.15em",
                         textTransform: "uppercase",
                         color: "var(--stone-dark)",
@@ -557,7 +557,7 @@ export default function ContactPage({ navigate }) {
                         rel="noopener noreferrer"
                         style={{
                           fontFamily: "var(--font-sans)",
-                          fontSize: "0.68rem",
+                          fontSize: "0.9rem",
                           letterSpacing: "0.1em",
                           color: "var(--gold)",
                           textDecoration: "none",

@@ -52,7 +52,7 @@ export default function ConsultationPage({ navigate }) {
         .consult-hero {
           padding-top: 10rem;
           padding-bottom: 4rem;
-          border-bottom: 1px solid rgba(184,151,90,0.15);
+          border-bottom: 1px solid var(--color-border);
         }
         .consult-body {
           display: grid;
@@ -73,10 +73,10 @@ export default function ConsultationPage({ navigate }) {
         .form-label {
           display: block;
           font-family: var(--font-sans);
-          font-size: 0.62rem;
-          letter-spacing: 0.18em;
+          font-size: 0.9rem;
+          letter-spacing: 0.12em;
           text-transform: uppercase;
-          color: var(--stone-dark);
+          color: var(--text-secondary);
           margin-bottom: 0.6rem;
         }
         .form-input {
@@ -92,7 +92,7 @@ export default function ConsultationPage({ navigate }) {
           transition: border-color 0.3s;
           letter-spacing: 0.03em;
         }
-        .form-input:focus { border-color: var(--gold); }
+        .form-input:focus { border-color: var(--color-accent); }
         .form-input::placeholder { color: var(--stone-mid); }
         .form-select {
           width: 100%;
@@ -108,7 +108,7 @@ export default function ConsultationPage({ navigate }) {
           appearance: none;
           cursor: pointer;
         }
-        .form-select:focus { border-color: var(--gold); }
+        .form-select:focus { border-color: var(--color-accent); }
         .form-textarea {
           width: 100%;
           padding: 0.85rem 1rem;
@@ -125,7 +125,7 @@ export default function ConsultationPage({ navigate }) {
           letter-spacing: 0.03em;
           line-height: 1.6;
         }
-        .form-textarea:focus { border-color: var(--gold); }
+        .form-textarea:focus { border-color: var(--color-accent); }
         .time-options {
           display: grid;
           grid-template-columns: 1fr 1fr 1fr;
@@ -137,7 +137,7 @@ export default function ConsultationPage({ navigate }) {
           text-align: center;
           cursor: pointer;
           font-family: var(--font-sans);
-          font-size: 0.72rem;
+          font-size: 0.9rem;
           letter-spacing: 0.08em;
           color: var(--stone-dark);
           transition: all 0.3s;
@@ -163,7 +163,7 @@ export default function ConsultationPage({ navigate }) {
         .info-value {
           font-family: var(--font-serif);
           font-size: 0.95rem;
-          color: rgba(248,245,240,0.75);
+          color: var(--ivory);
           line-height: 1.7;
         }
         .success-state {
@@ -197,7 +197,7 @@ export default function ConsultationPage({ navigate }) {
               <p style={{
                 fontFamily: "var(--font-serif)",
                 fontSize: "1rem",
-                color: "rgba(248,245,240,0.5)",
+                color: "var(--ivory)",
                 fontStyle: "italic",
                 lineHeight: 1.8,
                 maxWidth: "480px",
@@ -382,13 +382,13 @@ export default function ConsultationPage({ navigate }) {
             <div style={{
               marginTop: "2rem",
               padding: "1.5rem",
-              background: "rgba(184,151,90,0.08)",
-              border: "1px solid rgba(184,151,90,0.2)",
+              background: "var(--surface-overlay)",
+              border: "1px solid var(--color-border)",
             }}>
-              <div style={{ fontFamily: "var(--font-sans)", fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--gold)", marginBottom: "0.75rem" }}>
+              <div style={{ fontFamily: "var(--font-sans)", fontSize: "0.9rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--gold)", marginBottom: "0.75rem" }}>
                 WhatsApp Direct
               </div>
-              <div style={{ fontFamily: "var(--font-serif)", fontSize: "0.9rem", color: "rgba(248,245,240,0.6)", fontStyle: "italic", marginBottom: "1rem", lineHeight: 1.6 }}>
+              <div style={{ fontFamily: "var(--font-serif)", fontSize: "0.95rem", color: "var(--ivory)", fontStyle: "italic", marginBottom: "1rem", lineHeight: 1.6 }}>
                 Prefer to message first? Our care team responds on WhatsApp.
               </div>
               <a
@@ -396,7 +396,7 @@ export default function ConsultationPage({ navigate }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn--outline"
-                style={{ color: "rgba(248,245,240,0.7)", borderColor: "rgba(212,204,184,0.25)", fontSize: "0.68rem" }}
+                style={{ color: "var(--ivory)", borderColor: "var(--color-border)", fontSize: "0.9rem" }}
               >
                 Message on WhatsApp →
               </a>

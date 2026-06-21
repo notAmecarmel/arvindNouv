@@ -115,7 +115,7 @@ function Hero({ navigate }) {
         .hero-subtitle {
           font-family: var(--font-serif);
           font-size: 1.1rem;
-          color: rgba(248,245,240,0.55);
+          color: var(--ivory);
           font-style: italic;
           line-height: 1.7;
           max-width: 420px;
@@ -135,7 +135,7 @@ function Hero({ navigate }) {
           display: flex;
           align-items: center;
           gap: 0.75rem;
-          color: rgba(248,245,240,0.55);
+          color: var(--ivory);
           font-family: var(--font-sans);
           font-size: 0.75rem;
           letter-spacing: 0.15em;
@@ -148,9 +148,9 @@ function Hero({ navigate }) {
           bottom: 0;
           left: 0;
           right: 0;
-          background: rgba(26,26,24,0.9);
+          background: var(--overlay-dark);
           backdrop-filter: blur(16px);
-          border-top: 1px solid rgba(184,151,90,0.2);
+          border-top: 1px solid var(--color-border);
           padding: 1.25rem 2.5rem;
           display: flex;
           align-items: center;
@@ -182,7 +182,7 @@ function Hero({ navigate }) {
         .cred-sep {
           width: 1px;
           height: 32px;
-          background: rgba(184,151,90,0.25);
+          background: var(--gold-light);
           flex-shrink: 0;
         }
         .hero-offset-container {
@@ -224,15 +224,14 @@ function Hero({ navigate }) {
             <p className="hero-subtitle">
               Specialist in <b>maxillofacial surgery</b> and <b>facial reconstruction</b> — restoring function, confidence, and the face you recognise.
             </p>
-            <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.95rem", color: "rgba(248,245,240,0.65)", marginBottom: "2rem" }}>
+            <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.95rem", color: "var(--ivory)", marginBottom: "2rem" }}>
               Consultations at PACE Hospitals, Hyderabad · +91 83310 03232
             </p>
             <div className="hero-actions">
-              <button className="btn btn--gold" onClick={() => navigate("/consultation")}>
+              <button className="btn btn--primary" onClick={() => navigate("/consultation")}>
                 Request Consultation
               </button>
-              <button className="btn btn--outline" onClick={() => navigate("/treatments")}
-                style={{ color: "rgba(248,245,240,0.7)", borderColor: "rgba(212,204,184,0.3)" }}>
+              <button className="btn btn--outline" onClick={() => navigate("/treatments")}>
                 Explore Treatments
               </button>
             </div>
@@ -540,8 +539,8 @@ function PatientExperience() {
         }
         .exp-step-text {
           font-family: var(--font-sans);
-          font-size: 0.8rem;
-          color: rgba(248,245,240,0.45);
+          font-size: 0.95rem;
+          color: var(--ivory);
           line-height: 1.7;
           letter-spacing: 0.03em;
         }
@@ -569,7 +568,7 @@ function PatientExperience() {
               <p style={{
                 fontFamily: "var(--font-serif)",
                 fontSize: "1rem",
-                color: "rgba(248,245,240,0.55)",
+                color: "var(--ivory)",
                 fontStyle: "italic",
                 lineHeight: 1.8,
                 maxWidth: "400px",
@@ -598,8 +597,8 @@ function PatientExperience() {
             {/* Visual panel */}
             <div>
               <div style={{
-                background: "rgba(255,255,255,0.04)",
-                border: "1px solid rgba(184,151,90,0.2)",
+                background: "var(--surface-overlay)",
+                border: "1px solid var(--color-border)",
                 padding: "3rem",
               }}>
                 <div style={{
@@ -615,7 +614,7 @@ function PatientExperience() {
                 <div style={{ fontFamily: "var(--font-sans)", fontSize: "0.72rem", color: "var(--gold)", letterSpacing: "0.15em", textTransform: "uppercase" }}>
                   Prasanna Kanukuntla — Patient
                 </div>
-                <div style={{ height: "1px", background: "rgba(184,151,90,0.2)", margin: "2rem 0" }} />
+                <div style={{ height: "1px", background: "var(--color-border)", margin: "2rem 0" }} />
                 <div style={{
                   display: "grid",
                   gridTemplateColumns: "1fr 1fr",
@@ -682,7 +681,7 @@ function Testimonials({ navigate }) {
           ].map((t, i) => <TestimonialCard key={i} {...t} />)}
         </div>
         <div style={{ textAlign: "center" }}>
-          <button className="btn btn--outline" onClick={() => navigate("/patient-stories")}>
+          <button className="btn btn--outline" onClick={() => navigate("/")}>
             Read All Stories
           </button>
         </div>

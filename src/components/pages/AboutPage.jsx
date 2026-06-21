@@ -11,7 +11,7 @@ function PageHero() {
           <h1 className="about-heading-large" style={{ color: "var(--ivory)", fontWeight: 400, marginBottom: "1.5rem" }}>
             The Surgeon Behind<br /><em style={{ fontStyle: "italic", color: "var(--gold-light)" }}>The Practice</em>
           </h1>
-          <p className="about-copy" style={{ color: "rgba(248,245,240,0.55)", fontStyle: "italic" }}>
+          <p className="about-copy" style={{ color: "var(--ivory)", fontStyle: "italic" }}>
             Rigorous training. Years of practice. An unwavering commitment to the patient in front of him.
           </p>
         </div>
