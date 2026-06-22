@@ -9,7 +9,7 @@
   background: var(--white);
   border: 1px solid var(--ivory-deep);
   overflow: hidden;
-  transition: all 0.35s;
+  transition: border-color 0.35s, box-shadow 0.35s;
 }
 
 .location-card:hover {

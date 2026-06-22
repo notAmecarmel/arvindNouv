@@ -133,7 +133,7 @@ a { color: var(--color-accent); text-decoration: none; }
 a:hover, a:focus { text-decoration: underline; color: color-mix(in srgb, var(--color-accent) 85%, black 15%); }
 
 /* Buttons */
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.7rem 1.1rem; border-radius: 6px; font-weight: 600; cursor: pointer; border: 1px solid transparent; transition: all var(--transition-base); }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.7rem 1.1rem; border-radius: 6px; font-weight: 600; cursor: pointer; border: 1px solid transparent; transition: background-color var(--transition-base), color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base); }
 .btn:focus { outline: 3px solid color-mix(in srgb, var(--color-accent) 25%, transparent); outline-offset: 3px; }
 .btn--primary { background: var(--color-accent); color: var(--white); box-shadow: var(--shadow-accent); }
 .btn--primary:hover { filter: brightness(0.95); transform: translateY(-1px); }
@@ -495,7 +495,7 @@ button:focus, a:focus { box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-acc
   text-transform: uppercase;
   cursor: pointer;
   border: none;
-  transition: all var(--transition-base);
+  transition: background-color var(--transition-base), color var(--transition-base), transform var(--transition-base);
   text-decoration: none;
 }
 

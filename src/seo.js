@@ -47,77 +47,68 @@ const getOrigin = () => {
   return window.location.origin || SITE_URL;
 };
 
-const ensureTag = ({ selector, attr, value, isProperty = false, tagName = "meta" }) => {
+const elementCache = new Map();
+let lastSeoKey = "";
+
+const getCachedElement = (selector) => {
+  if (elementCache.has(selector)) {
+    return elementCache.get(selector);
+  }
+
   const element = document.head.querySelector(selector);
   if (element) {
-    if (value) {
-      element.setAttribute(attr, value);
-    } else {
-      element.remove();
-    }
-    return element;
+    elementCache.set(selector, element);
   }
+  return element;
+};
 
-  if (!value) return null;
+const createHeadElement = (tagName, attributes) => {
+  const element = document.createElement(tagName);
+  Object.entries(attributes).forEach(([key, value]) => element.setAttribute(key, value));
+  document.head.appendChild(element);
+  return element;
+};
 
-  const node = document.createElement(tagName);
-  node.setAttribute(attr, value);
-  if (isProperty) {
-    node.setAttribute("property", selector.match(/\[property="(.+)"\]/)?.[1] || "");
+const updateAttribute = (element, attributeName, value) => {
+  if (element.getAttribute(attributeName) !== value) {
+    element.setAttribute(attributeName, value);
   }
-  document.head.appendChild(node);
-  return node;
 };
 
 const setMeta = (name, content) => {
   const selector = `meta[name="${name}"]`;
-  const meta = document.head.querySelector(selector);
-  if (meta) {
-    meta.setAttribute("content", content);
-  } else {
-    const node = document.createElement("meta");
-    node.setAttribute("name", name);
-    node.setAttribute("content", content);
-    document.head.appendChild(node);
-  }
+  const meta = getCachedElement(selector) || createHeadElement("meta", { name, content });
+  elementCache.set(selector, meta);
+  updateAttribute(meta, "content", content);
 };
 
 const setMetaProperty = (property, content) => {
   const selector = `meta[property="${property}"]`;
-  const meta = document.head.querySelector(selector);
-  if (meta) {
-    meta.setAttribute("content", content);
-  } else {
-    const node = document.createElement("meta");
-    node.setAttribute("property", property);
-    node.setAttribute("content", content);
-    document.head.appendChild(node);
-  }
+  const meta = getCachedElement(selector) || createHeadElement("meta", { property, content });
+  elementCache.set(selector, meta);
+  updateAttribute(meta, "content", content);
 };
 
 const setLink = (rel, href) => {
   const selector = `link[rel="${rel}"]`;
-  const link = document.head.querySelector(selector);
-  if (link) {
-    link.setAttribute("href", href);
-  } else {
-    const node = document.createElement("link");
-    node.setAttribute("rel", rel);
-    node.setAttribute("href", href);
-    document.head.appendChild(node);
-  }
+  const link = getCachedElement(selector) || createHeadElement("link", { rel, href });
+  elementCache.set(selector, link);
+  updateAttribute(link, "href", href);
 };
 
 const setJsonLd = (json) => {
   const id = "structured-data";
-  let script = document.head.querySelector(`script#${id}`);
+  const selector = `script#${id}`;
+  const content = JSON.stringify(json, null, 2);
+  let script = getCachedElement(selector);
   if (!script) {
-    script = document.createElement("script");
-    script.setAttribute("type", "application/ld+json");
-    script.setAttribute("id", id);
-    document.head.appendChild(script);
+    script = createHeadElement("script", { id, type: "application/ld+json" });
+    elementCache.set(selector, script);
   }
-  script.textContent = JSON.stringify(json, null, 2);
+
+  if (script.textContent !== content) {
+    script.textContent = content;
+  }
 };
 
 const getMetaForPath = (path) => {
@@ -156,7 +147,13 @@ export const updateSeo = (path) => {
   const meta = getMetaForPath(path);
   const origin = getOrigin();
   const url = `${origin.replace(/\/$/, "")}${meta.path}`;
+  const seoKey = `${meta.title}|${meta.description}|${url}|${meta.image}`;
 
+  if (seoKey === lastSeoKey) {
+    return;
+  }
+
+  lastSeoKey = seoKey;
   document.title = meta.title;
   setMeta("description", meta.description);
   setMeta("robots", "index, follow");

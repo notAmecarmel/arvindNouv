@@ -92,7 +92,7 @@
   font-size: 0.9rem;
   letter-spacing: 0.08em;
   color: var(--slate-deep);
-  transition: all 0.3s;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
   background: var(--white);
 }
 

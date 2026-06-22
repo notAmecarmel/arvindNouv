@@ -12,9 +12,25 @@ export default function Navigation({ currentPath, navigate }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    let frameId = 0;
+
+    const onScroll = () => {
+      if (frameId) return;
+
+      frameId = window.requestAnimationFrame(() => {
+        const nextScrolled = window.scrollY > 60;
+        setScrolled((prevScrolled) => (prevScrolled === nextScrolled ? prevScrolled : nextScrolled));
+        frameId = 0;
+      });
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (frameId) {
+        window.cancelAnimationFrame(frameId);
+      }
+    };
   }, []);
 
   const handleNav = (path) => {

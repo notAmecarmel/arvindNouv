@@ -4,7 +4,7 @@
   border: 1px solid var(--ivory-deep);
   background: var(--white);
   text-align: center;
-  transition: all 0.4s var(--ease-luxury);
+  transition: transform 0.4s var(--ease-luxury), box-shadow 0.4s var(--ease-luxury), border-color 0.4s var(--ease-luxury);
 }
 
 .stat-card:hover {
@@ -45,7 +45,7 @@
   background: var(--white);
   border: 1px solid var(--ivory-deep);
   cursor: pointer;
-  transition: all 0.4s var(--ease-luxury);
+  transition: transform 0.4s var(--ease-luxury), box-shadow 0.4s var(--ease-luxury), border-color 0.4s var(--ease-luxury);
   position: relative;
   overflow: hidden;
 }
