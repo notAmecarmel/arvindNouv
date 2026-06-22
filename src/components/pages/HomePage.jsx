@@ -80,7 +80,7 @@ function SurgeonIntro({ navigate }) {
         <div className="intro-grid">
           <div className="intro-image-frame">
             <div className="intro-image">
-              <img src={hero2} alt="Dr. B. Arvind" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <img src={hero2} alt="Portrait of Dr. B. Arvind" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
               <div style={{
                 position: "absolute", inset: 0,
                 background: "linear-gradient(180deg, transparent 60%, rgba(26,26,24,0.2) 100%)",

@@ -1,6 +1,7 @@
 import { useState, useEffect, lazy, Suspense } from "react";
 import Navigation from "./components/layout/Navigation";
 import Footer from "./components/layout/Footer";
+import { updateSeo } from "./seo";
 import "./styles/globals.css";
 
 // Lazy-loaded page components for route-level code splitting
@@ -42,12 +43,16 @@ export default function App() {
     return () => window.removeEventListener("popstate", handleNav);
   }, []);
  
+  useEffect(() => {
+    updateSeo(currentPath);
+  }, [currentPath]);
+
   const navigate = (path) => {
     window.history.pushState({}, "", path);
     setCurrentPath(path);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
- 
+
   window.navigate = navigate;
  
   const PageComponent = ROUTES[currentPath] || HomePage;

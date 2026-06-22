@@ -29,7 +29,7 @@ function Biography() {
           <div>
             <div className="bio-image-wrapper">
               <div className="bio-image">
-                <img className="bio-image__img" src={hero2} alt="Dr. B. Arvind" />
+                <img className="bio-image__img" src={hero2} alt="Portrait of Dr. B. Arvind" />
               </div>
               <div className="degree-card">
                 <div className="degree-title">BDS · MDS</div>
