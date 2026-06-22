@@ -91,7 +91,7 @@
 .tx-tagline {
   font-family: var(--font-sans);
   font-size: 0.95rem;
-  color: var(--stone-mid);
+  color: var(--stone-dark);
   line-height: 1.6;
   letter-spacing: 0.02em;
 }
@@ -141,7 +141,7 @@
 }
 
 .testimonial-card.light .testimonial-text {
-  color: var(--ivory);
+  color: var(--slate-deep);
 }
 
 .testimonial-name {

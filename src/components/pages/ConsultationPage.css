@@ -63,7 +63,7 @@
 
 .form-input::placeholder,
 .form-select::placeholder {
-  color: var(--stone-mid);
+  color: var(--stone-dark);
 }
 
 .form-select {
@@ -91,7 +91,7 @@
   font-family: var(--font-sans);
   font-size: 0.9rem;
   letter-spacing: 0.08em;
-  color: var(--stone-dark);
+  color: var(--slate-deep);
   transition: all 0.3s;
   background: var(--white);
 }

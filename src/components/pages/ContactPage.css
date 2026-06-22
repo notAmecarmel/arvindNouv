@@ -53,7 +53,7 @@
 }
 
 .contact-field::placeholder {
-  color: var(--stone-mid);
+  color: var(--stone-dark);
 }
 
 @media (max-width: 900px) {

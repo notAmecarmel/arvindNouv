@@ -59,6 +59,8 @@ export default function Navigation({ currentPath, navigate }) {
           <button
             className="nav-hamburger"
             onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={menuOpen}
           >
             <span />
             <span />
