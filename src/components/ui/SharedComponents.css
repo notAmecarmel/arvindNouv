@@ -32,9 +32,11 @@
 
 .stat-note {
   font-family: var(--font-serif);
-  font-size: 0.85rem;
-  color: var(--stone-mid);
+  font-size: 1rem;
+  color: #000000;
   font-style: italic;
+  line-height: 1.85;
+  font-weight: 400;
 }
 
 /* ── Treatment Card ── */

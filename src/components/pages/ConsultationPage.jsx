@@ -12,42 +12,39 @@ export default function ConsultationPage({ navigate }) {
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
   const handleSubmit = async () => {
-
-  if (!form.name || !form.email || !form.phone) {
-    alert("Please fill all required fields");
-    return;
-  }
-
-  try {
-
-    const response = await fetch(
-      "/api/consultation",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(form)
-      }
-    );
-
-    const data = await response.json();
-
-    if (data.success) {
-      setSubmitted(true);
+    if (!form.name || !form.email || !form.phone) {
+      alert("Please fill all required fields");
+      return;
     }
 
-  } catch (err) {
-    console.error("FULL ERROR:", err);
-    alert(err.message);
-  }
-};
+    try {
+      const response = await fetch(
+        "/api/consultation",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(form)
+        }
+      );
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSubmitted(true);
+      }
+    } catch (err) {
+      console.error("FULL ERROR:", err);
+      alert(err.message);
+    }
+  };
 
   return (
     <div className="consult-page">
       {/* Hero */}
       <div className="consult-hero">
-        <div className="container">
+        <div className="container" style={{ paddingBottom: "4rem" }}>
           <div style={{ maxWidth: "640px" }}>
             <SectionLabel>Consultation</SectionLabel>
             <h1 style={{
@@ -62,17 +59,16 @@ export default function ConsultationPage({ navigate }) {
               Begin with a Conversation.<br />
               <em style={{ fontStyle: "italic", color: "var(--gold-light)" }}>Nothing more.</em>
             </h1>
-              <p style={{
-                fontFamily: "var(--font-serif)",
-                fontSize: "1rem",
-                color: "var(--ivory)",
-                fontStyle: "italic",
-                lineHeight: 1.8,
-                maxWidth: "480px",
-              }}>
-                Every surgical decision deserves unhurried clarity. Your first consultation is a private, no-obligation dialogue — with Dr. Arvind directly.
-              </p>
-            </div>
+            <p style={{
+              fontFamily: "var(--font-serif)",
+              fontSize: "1rem",
+              color: "var(--ivory)",
+              fontStyle: "italic",
+              lineHeight: 1.8,
+              maxWidth: "480px",
+            }}>
+              Every surgical decision deserves unhurried clarity. Your first consultation is a private, no-obligation dialogue — with Dr. Arvind directly.
+            </p>
           </div>
         </div>
 
