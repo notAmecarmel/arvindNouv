@@ -1,0 +1,59 @@
+.treatments-page {
+  background: var(--surface-overlay);
+}
+
+.treatments-hero {
+  padding: 6rem 0 4rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(250,246,241,1) 100%);
+}
+
+.treatments-intro {
+  max-width: 680px;
+  margin-top: 1rem;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--stone-dark);
+}
+
+.treatments-grid-section {
+  padding: 3rem 0;
+}
+
+.treatments-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.treatments-detail-block {
+  padding: 3rem 0 5rem;
+}
+
+.treatments-detail-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1.3fr 0.7fr;
+}
+
+.treatments-detail-box {
+  background: var(--white);
+  border: 1px solid var(--ivory-deep);
+  padding: 2rem;
+}
+
+.treatments-detail-label {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+@media (max-width: 900px) {
+  .treatments-detail-grid {
+    grid-template-columns: 1fr;
+  }
+}

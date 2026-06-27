@@ -7,6 +7,7 @@ import "./styles/globals.css";
 // Lazy-loaded page components for route-level code splitting
 const HomePage = lazy(() => import("./components/pages/HomePage"));
 const AboutPage = lazy(() => import("./components/pages/AboutPage"));
+const TreatmentsPage = lazy(() => import("./components/pages/TreatmentsPage"));
 const ConsultationPage = lazy(() => import("./components/pages/ConsultationPage"));
 const ContactPage = lazy(() => import("./components/pages/ContactPage"));
 
@@ -28,8 +29,8 @@ const LoadingFallback = () => (
 const ROUTES = {
   "/": HomePage,
   "/about": AboutPage,
-  "/treatments": HomePage,
-  "/treatments/jaw-correction": HomePage,
+  "/treatments": TreatmentsPage,
+  "/treatments/jaw-correction": TreatmentsPage,
   "/consultation": ConsultationPage,
   "/contact": ContactPage,
 };

@@ -173,7 +173,7 @@
   font-size: 0.68rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #2C2C2A;
+  color: var(--stone);
 }
 
 .cred-sep {
