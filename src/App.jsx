@@ -7,7 +7,7 @@ import "./styles/globals.css";
 // Lazy-loaded page components for route-level code splitting
 const HomePage = lazy(() => import("./components/pages/HomePage"));
 const AboutPage = lazy(() => import("./components/pages/AboutPage"));
-const TreatmentsPage = lazy(() => import("./components/pages/TreatmentsPage"));
+const TreatmentsPage = lazy(() => import("./components/pages/TreatmentDetailPage"));
 const ConsultationPage = lazy(() => import("./components/pages/ConsultationPage"));
 const ContactPage = lazy(() => import("./components/pages/ContactPage"));
 
