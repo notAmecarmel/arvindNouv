@@ -53,7 +53,7 @@ export default function Navigation({ currentPath, navigate }) {
         <div className={navInnerClass}>
           <div className="nav-logo" onClick={() => handleNav("/")}>
             <span className="nav-logo-name">Dr. B. Arvind</span>
-            <span className="nav-logo-title">Maxillofacial & Facial Surgeon</span>
+            <span className="nav-logo-title">Maxillofacial & Head and Neck Surgeon</span>
           </div>
 
           <ul className="nav-links">
