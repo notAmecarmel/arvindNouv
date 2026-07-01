@@ -9,11 +9,59 @@ export default function ConsultationPage({ navigate }) {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+  const limitWords = (value, maxWords) => {
+    const words = value.trim().split(/\s+/).filter(Boolean);
+    return words.slice(0, maxWords).join(" ");
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    if (name === "phone") {
+      const digitsOnly = value.replace(/\D/g, "").slice(0, 10);
+      setForm((prev) => ({ ...prev, phone: digitsOnly }));
+      return;
+    }
+
+    if (name === "name") {
+      setForm((prev) => ({ ...prev, name: value.slice(0, 30) }));
+      return;
+    }
+
+    if (name === "message") {
+      setForm((prev) => ({ ...prev, message: limitWords(value, 100) }));
+      return;
+    }
+
+    setForm((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = async () => {
-    if (!form.name || !form.email || !form.phone) {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phonePattern = /^\d{10}$/;
+
+    if (!form.name.trim() || !form.email.trim() || !form.phone.trim()) {
       alert("Please fill all required fields");
+      return;
+    }
+
+    if (form.name.trim().length > 30) {
+      alert("Name must be 30 characters or less");
+      return;
+    }
+
+    if (form.message.trim().split(/\s+/).filter(Boolean).length > 100) {
+      alert("Message must be 100 words or less");
+      return;
+    }
+
+    if (!emailPattern.test(form.email.trim())) {
+      alert("Please enter a valid email address");
+      return;
+    }
+
+    if (!phonePattern.test(form.phone)) {
+      alert("Please enter a valid 10-digit phone number");
       return;
     }
 
@@ -120,6 +168,7 @@ export default function ConsultationPage({ navigate }) {
                       value={form.name}
                       onChange={handleChange}
                       placeholder="Your full name"
+                      maxLength={30}
                     />
                   </div>
 
@@ -132,6 +181,7 @@ export default function ConsultationPage({ navigate }) {
                       value={form.email}
                       onChange={handleChange}
                       placeholder="your@email.com"
+                      inputMode="email"
                     />
                   </div>
 
@@ -142,7 +192,10 @@ export default function ConsultationPage({ navigate }) {
                       name="phone"
                       value={form.phone}
                       onChange={handleChange}
-                      placeholder="+91 XXXXX XXXXX"
+                      placeholder="10-digit number"
+                      inputMode="numeric"
+                      maxLength={10}
+                      pattern="[0-9]{10}"
                     />
                   </div>
 
@@ -230,7 +283,7 @@ export default function ConsultationPage({ navigate }) {
             </div>
 
             {[
-              { label: "Duration", value: "45–60 minutes, unhurried." },
+              { label: "Duration", value: "20-30 minutes, unhurried." },
               { label: "Who You'll Meet", value: "Dr. Arvind directly — not a registrar or coordinator." },
               { label: "What We Cover", value: "Medical history, clinical examination, imaging review, and your goals." },
               { label: "Decision Pressure", value: "None. There is no obligation to proceed." },

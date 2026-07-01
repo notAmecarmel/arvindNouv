@@ -11,7 +11,7 @@ const LOCATIONS = [
     hours: "Monday – Saturday: 9 AM – 5 PM",
     primary: true,
     mapEmbed:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4024.3347462930205!2d78.38166117540446!3d17.446908283450444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb916020093aa3%3A0xe37f244ddf5444a7!2sPACE%20Hospitals%20-%20Best%20Hospital%20in%20Hyderabad%2C%20HITEC%20City!5e1!3m2!1sen!2sin!4v1781794293394!5m2!1sen!2sin",
+      "https://www.google.com/maps?q=PACE+Hospitals+HITEC+City+Hyderabad&output=embed&z=15&maptype=roadmap",
     directions: "https://maps.app.goo.gl/YqJBqU94p6mUeeGB6",
   },
   {
@@ -23,7 +23,7 @@ const LOCATIONS = [
       "Monday – Saturday: 10 AM – 9 PM\nSunday: 11 AM – 5 PM",
     primary: false,
     mapEmbed:
-      "https://www.google.com/maps?q=Dhriti+Dental+Nallagandla+Hyderabad&output=embed",
+      "https://www.google.com/maps?q=Dhriti+Dental+Nallagandla+Hyderabad&output=embed&t=m",
   },
 ];
 
@@ -40,16 +40,64 @@ export default function ContactPage({ navigate }) {
 
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value
-    });
+  const limitWords = (value, maxWords) => {
+    const words = value.trim().split(/\s+/).filter(Boolean);
+    return words.slice(0, maxWords).join(" ");
   };
-  const handleSubmit = async () => {
 
-    if (!form.name || !form.email || !form.message) {
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    if (name === "phone") {
+      const digitsOnly = value.replace(/\D/g, "").slice(0, 10);
+      setForm((prev) => ({ ...prev, phone: digitsOnly }));
+      return;
+    }
+
+    if (name === "name") {
+      setForm((prev) => ({ ...prev, name: value.slice(0, 30) }));
+      return;
+    }
+
+    if (name === "subject" || name === "message") {
+      setForm((prev) => ({ ...prev, [name]: limitWords(value, 100) }));
+      return;
+    }
+
+    setForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async () => {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phonePattern = /^\d{10}$/;
+
+    if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
       alert("Please fill required fields");
+      return;
+    }
+
+    if (form.name.trim().length > 30) {
+      alert("Name must be 30 characters or less");
+      return;
+    }
+
+    if (form.subject.trim() && form.subject.trim().split(/\s+/).filter(Boolean).length > 100) {
+      alert("Subject must be 100 words or less");
+      return;
+    }
+
+    if (form.message.trim().split(/\s+/).filter(Boolean).length > 100) {
+      alert("Message must be 100 words or less");
+      return;
+    }
+
+    if (!emailPattern.test(form.email.trim())) {
+      alert("Please enter a valid email address");
+      return;
+    }
+
+    if (form.phone && !phonePattern.test(form.phone)) {
+      alert("Please enter a valid 10-digit phone number");
       return;
     }
 
@@ -315,6 +363,7 @@ export default function ContactPage({ navigate }) {
                   value={form.name}
                   onChange={handleChange}
                   placeholder="Full Name"
+                  maxLength={30}
                 />
 
                 <input
@@ -324,6 +373,7 @@ export default function ContactPage({ navigate }) {
                   onChange={handleChange}
                   placeholder="Email Address"
                   type="email"
+                  inputMode="email"
                 />
               </div>
 
@@ -333,6 +383,9 @@ export default function ContactPage({ navigate }) {
                 value={form.phone}
                 onChange={handleChange}
                 placeholder="Phone Number"
+                inputMode="numeric"
+                maxLength={10}
+                pattern="[0-9]{10}"
               />
 
               <input
