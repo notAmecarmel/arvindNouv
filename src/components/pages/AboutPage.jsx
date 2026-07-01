@@ -94,11 +94,11 @@ function Credentials() {
       ],
     },
     {
-      title: "Memberships & Fellowships",
+      title: "Memberships",
       items: [
         { label: "AOMSI", detail: "Association of Oral and Maxillofacial Surgeons of India" },
         { label: "IAOMFS", detail: "International Association of OMFS" },
-        { label: "MCI Registered", detail: "Medical Council of India" },
+        { label: "DCI Registered", detail: "Dental Council of India" },
       ],
     },
   ];

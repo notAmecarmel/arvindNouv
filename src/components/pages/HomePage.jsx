@@ -52,7 +52,7 @@ function Hero({ navigate }) {
       {/* Credentials bar */}
       <div className="hero-credentials-bar">
         {[
-          { value: "9+", label: "Years Experience" },
+          { value: "4+", label: "Years Experience" },
           { value: "BDS · MDS", label: "Qualifications" },
           { value: "100+", label: "Procedures" },
           { value: "PACE Hospitals, Hyderabad", label: "Hospital Affiliation" },
@@ -112,7 +112,7 @@ function SurgeonIntro({ navigate }) {
             </ul>
 
             <p className="intro-body">
-              With over two decades of surgical practice, Dr. B. Arvind is recognised among India's foremost maxillofacial surgeons — trained in India with oncology and international fellowship experience.
+              With over four years of surgical practice, Dr. B. Arvind is recognised among India's foremost maxillofacial surgeons — trained in India with oncology and international fellowship experience.
             </p>
 
             <div className="intro-philosophy">
@@ -141,7 +141,7 @@ function TrustStats() {
       <div className="container">
         <div className="trust-stats-grid">
           {[
-            { number: "9+", label: "Years in Practice", note: "Specialist Experience" },
+            { number: "4+", label: "Years in Practice", note: "Specialist Experience" },
             { number: "100+", label: "Cancer Surgeries", note: "Oncology Fellowship Experience" },
             { number: "98%", label: "Patient Satisfaction", note: "Based on follow-up data" },
           ].map((s, i) => <StatCard key={i} {...s} />)}
@@ -333,11 +333,6 @@ function Testimonials({ navigate }) {
               location: "Hyderabad",
             },
           ].map((t, i) => <TestimonialCard key={i} {...t} />)}
-        </div>
-        <div style={{ textAlign: "center" }}>
-          <button className="btn btn--outline" onClick={() => navigate("/")}>
-            Read All Stories
-          </button>
         </div>
       </div>
     </section>

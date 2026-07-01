@@ -92,7 +92,7 @@ const TREATMENTS = [
 const EXPERTISE_AREAS = [
   {
     title: "Oncology",
-    subtitle: "Management Of Oral Cancers",
+    subtitle: "Management Of Head & Neck Cancers",
     paragraphs: [
       "Oral cancer arises in the tissues of the mouth, including the tongue, cheeks, gums, floor of the mouth, and lips. It may present as a non-healing ulcer, lump, or white/red patch, and early detection plays a critical role in successful treatment.",
       "Dr. Arvind offers a comprehensive management of oral cancer, combining precise surgical care with functional restoration.",
