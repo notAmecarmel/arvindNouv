@@ -3,9 +3,16 @@ import { SectionLabel } from "../ui/SharedComponents";
 import "./ConsultationPage.css";
 
 export default function ConsultationPage({ navigate }) {
-  const [form, setForm] = useState({
-    name: "", email: "", phone: "", procedure: "", message: "", preferred: "morning"
-  });
+  const initialForm = {
+    name: "",
+    email: "",
+    phone: "",
+    procedure: "",
+    message: "",
+    preferred: "morning"
+  };
+
+  const [form, setForm] = useState(initialForm);
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
@@ -34,6 +41,12 @@ export default function ConsultationPage({ navigate }) {
     }
 
     setForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleReset = () => {
+    setForm({ ...initialForm });
+    setSubmitted(false);
+    setLoading(false);
   };
 
   const handleSubmit = async () => {
@@ -145,6 +158,20 @@ export default function ConsultationPage({ navigate }) {
                 }}>
                   Confirmation sent to: {form.email}
                 </div>
+
+                <button
+                  type="button"
+                  className="btn btn--primary"
+                  onClick={handleReset}
+                  style={{
+                    width: "100%",
+                    justifyContent: "center",
+                    padding: "1.1rem",
+                    marginTop: "1.5rem"
+                  }}
+                >
+                  Submit Another Request
+                </button>
               </div>
             ) : (
               <>
