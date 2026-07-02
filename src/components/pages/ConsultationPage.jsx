@@ -78,6 +78,8 @@ export default function ConsultationPage({ navigate }) {
       return;
     }
 
+    setLoading(true);
+
     try {
       const response = await fetch(
         "/api/consultation",
@@ -98,6 +100,8 @@ export default function ConsultationPage({ navigate }) {
     } catch (err) {
       console.error("FULL ERROR:", err);
       alert(err.message);
+    } finally {
+      setLoading(false);
     }
   };
 
