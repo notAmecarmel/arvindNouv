@@ -28,13 +28,15 @@ const LOCATIONS = [
 ];
 
 export default function ContactPage({ navigate }) {
-  const [form, setForm] = useState({
+  const initialForm = {
     name: "",
     email: "",
     phone: "",
     subject: "",
     message: ""
-  });
+  };
+
+  const [form, setForm] = useState(initialForm);
 
   const [submitted, setSubmitted] = useState(false);
 
@@ -65,6 +67,12 @@ export default function ContactPage({ navigate }) {
     }
 
     setForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleReset = () => {
+    setForm({ ...initialForm });
+    setSubmitted(false);
+    setLoading(false);
   };
 
   const handleSubmit = async () => {
@@ -329,6 +337,24 @@ export default function ContactPage({ navigate }) {
                   <br />
                   Our team will get back to you shortly.
                 </p>
+
+                <button
+                  type="button"
+                  className="btn btn--primary"
+                  onClick={() => {
+                    setForm({ ...initialForm });
+                    setSubmitted(false);
+                    setLoading(false);
+                  }}
+                  style={{
+                    marginTop: "2rem",
+                    width: "100%",
+                    justifyContent: "center",
+                    padding: "1.1rem"
+                  }}
+                >
+                  Submit Another Request
+                </button>
               </div>
 
             ) : (
