@@ -1,0 +1,15 @@
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  justify-items: stretch;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+@media (max-width: 980px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+}

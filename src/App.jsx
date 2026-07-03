@@ -4,24 +4,34 @@ import Footer from "./components/layout/Footer";
 import { updateSeo } from "./seo";
 import "./styles/globals.css";
 
-// Lazy-loaded page components for route-level code splitting
+// Lazy-loaded page components
 const HomePage = lazy(() => import("./components/pages/HomePage"));
 const AboutPage = lazy(() => import("./components/pages/AboutPage"));
-const TreatmentsPage = lazy(() => import("./components/pages/TreatmentDetailPage"));
-const ConsultationPage = lazy(() => import("./components/pages/ConsultationPage"));
-const ContactPage = lazy(() => import("./components/pages/ContactPage"));
+const TreatmentsPage = lazy(() =>
+  import("./components/pages/TreatmentDetailPage")
+);
+const ConsultationPage = lazy(() =>
+  import("./components/pages/ConsultationPage")
+);
+const ContactPage = lazy(() =>
+  import("./components/pages/ContactPage")
+);
+const BlogsPage = lazy(() => import("./pages/blogs"));
+const BlogDetail = lazy(() => import("./pages/BlogDetail"));
 
-// Simple loading fallback component
+// Loading fallback
 const LoadingFallback = () => (
-  <div style={{
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    minHeight: "60vh",
-    fontFamily: "var(--font-serif)",
-    fontSize: "1rem",
-    color: "var(--stone-dark)",
-  }}>
+  <div
+    style={{
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      minHeight: "60vh",
+      fontFamily: "var(--font-serif)",
+      fontSize: "1rem",
+      color: "var(--stone-dark)",
+    }}
+  >
     Loading...
   </div>
 );
@@ -33,17 +43,20 @@ const ROUTES = {
   "/treatments/jaw-correction": TreatmentsPage,
   "/consultation": ConsultationPage,
   "/contact": ContactPage,
+  "/blogs": BlogsPage,
 };
- 
+
 export default function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
- 
+
   useEffect(() => {
     const handleNav = () => setCurrentPath(window.location.pathname);
+
     window.addEventListener("popstate", handleNav);
+
     return () => window.removeEventListener("popstate", handleNav);
   }, []);
- 
+
   useEffect(() => {
     updateSeo(currentPath);
   }, [currentPath]);
@@ -55,19 +68,27 @@ export default function App() {
   };
 
   window.navigate = navigate;
- 
-  const PageComponent = ROUTES[currentPath] || HomePage;
+
+  // Dynamic routing
+  let PageComponent;
+
+  if (currentPath.startsWith("/blogs/")) {
+    PageComponent = BlogDetail;
+  } else {
+    PageComponent = ROUTES[currentPath] || HomePage;
+  }
 
   return (
     <div className="app-root">
       <Navigation currentPath={currentPath} navigate={navigate} />
+
       <main>
         <Suspense fallback={<LoadingFallback />}>
           <PageComponent navigate={navigate} />
         </Suspense>
       </main>
+
       <Footer navigate={navigate} />
     </div>
   );
 }
- 

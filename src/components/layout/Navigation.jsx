@@ -3,6 +3,7 @@ import "./Navigation.css";
 
 const NAV_LINKS = [
   { label: "About", path: "/about" },
+  { label: "Blogs", path: "/blogs" },
   { label: "Treatments", path: "/treatments" },
   { label: "Contact", path: "/contact" },
 ];
