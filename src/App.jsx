@@ -16,7 +16,7 @@ const ConsultationPage = lazy(() =>
 const ContactPage = lazy(() =>
   import("./components/pages/ContactPage")
 );
-const BlogsPage = lazy(() => import("./pages/blogs"));
+const BlogsPage = lazy(() => import("./pages/Blogs"));
 const BlogDetail = lazy(() => import("./pages/BlogDetail"));
 
 // Loading fallback
