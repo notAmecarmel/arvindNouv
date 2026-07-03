@@ -54,14 +54,6 @@ export default function BlogDetail() {
           ← Back
         </button>
 
-        {blog.image && (
-          <img
-            src={blog.image}
-            alt={blog.title}
-            className="detail-image"
-          />
-        )}
-
         <div className="blog-detail-content">
           <div className="meta">
             <span className="category">{blog.category}</span>
@@ -71,6 +63,13 @@ export default function BlogDetail() {
           <h1 className="title">{blog.title}</h1>
 
           <div className="content">
+            {blog.image && (
+              <img
+                src={blog.image}
+                alt={blog.title}
+                className="detail-image"
+              />
+            )}
             <PortableText value={blog.body} />
           </div>
         </div>

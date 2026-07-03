@@ -52,11 +52,15 @@
 }
 
 .detail-image {
-  width: 100%;
+  float: right;
+  width: min(34%, 320px);
+  max-width: 320px;
   height: auto;
   display: block;
   object-fit: cover;
-  max-height: 620px;
+  margin: 0.25rem 0 1rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
 }
 
 .blog-detail-content {
@@ -83,8 +87,10 @@
 .date {
   margin-left: auto;
   font-family: var(--font-sans);
-  color: var(--stone);
+  color: var(--slate-deep);
   font-size: 0.9rem;
+  font-weight: 700;
+  opacity: 1;
 }
 
 .title {
@@ -102,6 +108,7 @@
   line-height: 1.85;
   font-size: 1.06rem;
   max-width: 1080px;
+  overflow: hidden;
 }
 
 .content p {
@@ -128,6 +135,12 @@
   .meta { padding: 0 12px; }
   .title { margin: 0 12px 8px; }
   .content { padding: 0 12px 28px; }
+  .detail-image {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 1.25rem;
+  }
 }
   @media (max-width: 980px) {
     .back-btn { top: 84px; }
