@@ -170,7 +170,7 @@ export default function ContactPage({ navigate }) {
                 color: "var(--gold)",
               }}
             >
-              Expert dental care with compassion.
+              Expert surgical care with compassion.
             </em>
           </h1>
 
