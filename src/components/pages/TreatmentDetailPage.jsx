@@ -163,7 +163,7 @@ const EXPERTISE_AREAS = [
     ],
   },
   {
-    title: "Management OF Benign Pathologies of Head and Neck region",
+    title: "Management of Benign Pathologies of Head and Neck region",
     paragraphs: [
       "Benign (non-cancerous) conditions of the head and neck include a wide range of swellings and lesions affecting the oral cavity, jaw bones, and soft tissues. While not malignant, these conditions can grow, cause discomfort, or affect function if left untreated.",
       "Dr. Arvind provides comprehensive management of benign head & neck pathologies, with a focus on precise diagnosis and effective treatment.",
