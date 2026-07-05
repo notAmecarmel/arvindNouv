@@ -154,6 +154,7 @@ export default function Footer({ navigate }) {
                 {[
                   ["About", "/about"],
                   ["Treatments", "/treatments"],
+                  ["Blogs", "/blogs"],
                   ["Consultation", "/consultation"],
                 ].map(([label, path]) => (
                   <li key={path}>
