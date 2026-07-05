@@ -76,12 +76,20 @@
 }
 
 .bio-affiliation-note {
+  display: block;
   font-family: var(--font-sans);
   font-size: 0.85rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--stone-dark);
   margin-top: 0.75rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.bio-affiliation-note:hover,
+.bio-affiliation-note:focus-visible {
+  color: var(--gold);
 }
 
 .degree-card {

@@ -44,7 +44,6 @@ function Biography() {
                 href="https://www.pacehospital.com/dr-b-arvind"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ display: "inline-block", textDecoration: "none" }}
               >
                 PACE Hospitals, Hyderabad
               </a>
