@@ -39,9 +39,15 @@ function Biography() {
 
             <div className="bio-affiliation">
               <SectionLabel>Hospital Affiliations</SectionLabel>
-              <div className="bio-affiliation-note">
+              <a
+                className="bio-affiliation-note"
+                href="https://www.pacehospital.com/dr-b-arvind"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ display: "inline-block", textDecoration: "none" }}
+              >
                 PACE Hospitals, Hyderabad
-              </div>
+              </a>
             </div>
           </div>
 
