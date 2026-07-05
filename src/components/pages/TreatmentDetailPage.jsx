@@ -1,6 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { SectionLabel, ConsultCTA, ImageBlock } from "../ui/SharedComponents";
 import "./TreatmentDetailPage.css";
+
+const slugify = (value) =>
+  value
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
 
 const TREATMENTS = [
   {
@@ -208,6 +215,36 @@ const EXPERTISE_AREAS = [
 /* ── Treatments List Page ── */
 export default function TreatmentsPage({ navigate }) {
   const [expanded, setExpanded] = useState(() => EXPERTISE_AREAS.map(() => false));
+  const locationKey = typeof window !== "undefined" ? `${window.location.pathname}${window.location.search}` : "";
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const targetSection = params.get("section");
+
+    if (!targetSection) {
+      return;
+    }
+
+    const targetIndex = EXPERTISE_AREAS.findIndex((area) => slugify(area.title) === targetSection);
+
+    if (targetIndex === -1) {
+      return;
+    }
+
+    setExpanded(() => {
+      const next = Array(EXPERTISE_AREAS.length).fill(false);
+      next[targetIndex] = true;
+      return next;
+    });
+
+    requestAnimationFrame(() => {
+      const node = document.getElementById(`treatment-section-${targetSection}`);
+      if (!node) return;
+
+      const top = node.getBoundingClientRect().top + window.scrollY - 120;
+      window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+    });
+  }, [locationKey]);
 
   return (
     <>
@@ -229,7 +266,7 @@ export default function TreatmentsPage({ navigate }) {
             {EXPERTISE_AREAS.map((area, i) => {
               const isExpanded = expanded[i];
               return (
-                <div key={i} className="expertise-card">
+                <div key={i} id={`treatment-section-${slugify(area.title)}`} className="expertise-card">
                 {area.subtitle && (
                   <div className="expertise-subtitle">
                     {area.subtitle}

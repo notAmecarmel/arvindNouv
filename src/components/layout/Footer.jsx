@@ -171,18 +171,18 @@ export default function Footer({ navigate }) {
               <div className="footer-col-title">Procedures</div>
               <ul className="footer-links">
                 {[
-                  "Oncology — Oral Cancer Management",
-                  "Salivary Gland Tumours",
-                  "Neck Masses & Lymph Node Biopsy",
-                  "Orthognathic (Jaw) Surgery",
-                  "Maxillofacial Trauma",
-                  "Benign Head & Neck Pathologies",
-                  "Implant Dentistry & Minor Oral Surgery",
-                  "Advanced Implant Dentistry",
-                ].map(t => (
-                  <li key={t}>
-                    <span className="footer-link" onClick={() => navigate("/treatments")}>
-                      {t}
+                  { label: "Oncology — Oral Cancer Management", section: "oncology" },
+                  { label: "Salivary Gland Tumours", section: "salivary-gland-tumours" },
+                  { label: "Neck Masses & Lymph Node Biopsy", section: "neck-masses-and-lymph-node-biopsy" },
+                  { label: "Orthognathic (Jaw) Surgery", section: "orthognathic-surgery" },
+                  { label: "Maxillofacial Trauma", section: "maxillofacial-trauma" },
+                  { label: "Benign Head & Neck Pathologies", section: "management-of-benign-pathologies-of-head-and-neck-region" },
+                  { label: "Implant Dentistry & Minor Oral Surgery", section: "implant-dentistry-and-minor-oral-surgical-procedures" },
+                  { label: "Advanced Implant Dentistry", section: "advanced-implant-dentistry" },
+                ].map(({ label, section }) => (
+                  <li key={label}>
+                    <span className="footer-link" onClick={() => navigate(`/treatments?section=${section}`)}>
+                      {label}
                     </span>
                   </li>
                 ))}

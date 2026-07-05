@@ -69,13 +69,15 @@ export default function App() {
 
   window.navigate = navigate;
 
+  const routePath = currentPath.split("?")[0];
+
   // Dynamic routing
   let PageComponent;
 
-  if (currentPath.startsWith("/blogs/")) {
+  if (routePath.startsWith("/blogs/")) {
     PageComponent = BlogDetail;
   } else {
-    PageComponent = ROUTES[currentPath] || HomePage;
+    PageComponent = ROUTES[routePath] || HomePage;
   }
 
   return (

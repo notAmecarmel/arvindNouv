@@ -39,8 +39,9 @@ export default function Navigation({ currentPath, navigate }) {
     setMenuOpen(false);
   };
 
-  const isHome = currentPath === "/";
-  
+  const currentRoute = currentPath.split("?")[0];
+  const isHome = currentRoute === "/";
+
   const navInnerClass = [
     "nav-inner",
     scrolled && "scrolled",
@@ -61,7 +62,7 @@ export default function Navigation({ currentPath, navigate }) {
             {NAV_LINKS.map(({ label, path }) => (
               <li key={path}>
                 <span
-                  className={`nav-link ${currentPath === path ? "active" : ""}`}
+                  className={`nav-link ${currentRoute === path ? "active" : ""}`}
                   onClick={() => handleNav(path)}
                 >
                   {label}
