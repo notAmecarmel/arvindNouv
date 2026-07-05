@@ -141,7 +141,7 @@ export default function Footer({ navigate }) {
                 "Precision in every procedure. Humanity in every consultation."
               </p>
               <div style={{ marginTop: "2rem", display: "flex", gap: "1rem" }}>
-                {["MCI", "AOMSI", "IAOMFS"].map(b => (
+                {["DCI", "AOMSI", "IAOMFS"].map(b => (
                   <span key={b} className="cert-badge">{b}</span>
                 ))}
               </div>
