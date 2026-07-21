@@ -8,6 +8,7 @@ export default function ConsultationPage({ navigate }) {
     email: "",
     phone: "",
     procedure: "",
+    appointmentDate: "",
     message: "",
     preferred: "morning"
   };
@@ -75,6 +76,10 @@ export default function ConsultationPage({ navigate }) {
 
     if (!phonePattern.test(form.phone)) {
       alert("Please enter a valid 10-digit phone number");
+      return;
+    }
+    if (!form.appointmentDate) {
+      alert("Please enter a valid appointment date");
       return;
     }
 
@@ -258,7 +263,20 @@ export default function ConsultationPage({ navigate }) {
                       ))}
                     </div>
                   </div>
+                  <div className="form-group" style={{ gridColumn: "1/3" }}>
+                    <label className="form-label">
+                      Preferred Appointment Date *
+                    </label>
 
+                    <input
+                      className="form-input"
+                      type="date"
+                      name="appointmentDate"
+                      value={form.appointmentDate}
+                      onChange={handleChange}
+                      min={new Date().toISOString().split("T")[0]}
+                    />
+                  </div>
                   <div className="form-group" style={{ gridColumn: "1/3" }}>
                     <label className="form-label">Brief Description (optional)</label>
                     <textarea

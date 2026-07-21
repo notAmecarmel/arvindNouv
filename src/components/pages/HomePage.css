@@ -3,7 +3,7 @@
   min-height: 100vh;
   position: relative;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   overflow: hidden;
   background: var(--slate-deep);
   padding-top: 5rem;
@@ -187,14 +187,171 @@
   margin-left: 140px;
 }
 
+/* ===========================================================
+   TABLET LAYOUT (768px–1024px)
+   =========================================================== */
+
+@media (min-width:768px) and (max-width:1024px){
+
+  /* ---------------- Hero ---------------- */
+
+  .hero{
+    min-height:100vh;
+    padding-top:90px;
+    align-items:center;
+  }
+
+  .hero-offset-container{
+    margin-left:0;
+    width:100%;
+  }
+
+  .hero-content{
+
+    max-width:620px;
+
+    padding-left:48px;
+    padding-right:48px;
+
+    padding-bottom:180px;
+
+    margin-top:-40px;
+  }
+
+  .hero-eyebrow{
+
+    font-size:.72rem;
+
+    margin-bottom:1.25rem;
+
+    letter-spacing:.18em;
+  }
+
+  .hero-eyebrow::before{
+
+    width:32px;
+  }
+
+  .hero-title{
+
+    font-size:clamp(3.8rem,6vw,4.8rem);
+
+    line-height:.95;
+
+    margin-bottom:1.2rem;
+  }
+
+  .hero-subtitle{
+
+    font-size:1.15rem;
+
+    max-width:500px;
+
+    margin-bottom:2rem;
+  }
+
+  .hero-actions{
+
+    gap:1rem;
+  }
+
+  /* ---------------- Background Image ---------------- */
+
+  .hero-photo-area{
+
+    width:100%;
+
+    opacity:.14;
+
+    pointer-events:none;
+  }
+
+  .hero-photo-placeholder{
+
+    background-size:34%,cover;
+
+    background-position:92% center;
+  }
+
+  .hero-photo-overlay{
+
+    background:linear-gradient(
+      to right,
+      rgba(26,26,24,.95) 0%,
+      rgba(26,26,24,.82) 42%,
+      rgba(26,26,24,.35) 70%,
+      transparent 100%
+    );
+  }
+
+  /* ---------------- Credentials ---------------- */
+
+  .hero-credentials-bar{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,minmax(0,1fr));
+
+    row-gap:18px;
+
+    column-gap:18px;
+
+    padding:22px 28px;
+
+    overflow:visible;
+
+    align-items:start;
+  }
+
+  .hero-credentials-bar > div{
+
+    width:100%;
+  }
+
+  .cred-item{
+
+    white-space:normal;
+  }
+
+  .cred-value{
+
+    font-size:.82rem;
+  }
+
+  .cred-label{
+
+    font-size:.64rem;
+  }
+
+  .cred-sep{
+
+    display:none;
+  }
+
+}
+
 @media (max-width: 768px) {
   .hero {
     padding-top: 6rem;
   }
-  .hero-photo-area {
+.hero-photo-area {
     width: 100%;
-    opacity: 0.25;
-  }
+    opacity: 0.12;
+}
+
+.hero-photo-placeholder {
+    background-size: 35%;
+    background-position: 85% center;
+}
+
+.hero-title{
+    font-size: clamp(4rem,7vw,5rem);
+}
+
+.hero-subtitle{
+    font-size:1.2rem;
+    max-width:520px;
+}
   .hero-content {
     max-width: 100%;
   }
