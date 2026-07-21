@@ -17,6 +17,16 @@ export default function ConsultationPage({ navigate }) {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
+  const getMinAppointmentDate = () => {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, "0");
+    const day = String(today.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
+  };
+
+  const minAppointmentDate = getMinAppointmentDate();
+
   const limitWords = (value, maxWords) => {
     const words = value.trim().split(/\s+/).filter(Boolean);
     return words.slice(0, maxWords).join(" ");
@@ -38,6 +48,16 @@ export default function ConsultationPage({ navigate }) {
 
     if (name === "message") {
       setForm((prev) => ({ ...prev, message: limitWords(value, 100) }));
+      return;
+    }
+
+    if (name === "appointmentDate") {
+      const nextDate = value;
+      if (nextDate && nextDate < minAppointmentDate) {
+        setForm((prev) => ({ ...prev, appointmentDate: minAppointmentDate }));
+        return;
+      }
+      setForm((prev) => ({ ...prev, appointmentDate: nextDate }));
       return;
     }
 
@@ -78,8 +98,8 @@ export default function ConsultationPage({ navigate }) {
       alert("Please enter a valid 10-digit phone number");
       return;
     }
-    if (!form.appointmentDate) {
-      alert("Please enter a valid appointment date");
+    if (!form.appointmentDate || form.appointmentDate < minAppointmentDate) {
+      alert("Please select a present or future appointment date");
       return;
     }
 
@@ -274,7 +294,7 @@ export default function ConsultationPage({ navigate }) {
                       name="appointmentDate"
                       value={form.appointmentDate}
                       onChange={handleChange}
-                      min={new Date().toISOString().split("T")[0]}
+                      min={minAppointmentDate}
                     />
                   </div>
                   <div className="form-group" style={{ gridColumn: "1/3" }}>
