@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { SectionLabel } from "../ui/SharedComponents";
 import "./ConsultationPage.css";
+import { Turnstile } from "react-turnstile";
 
 export default function ConsultationPage({ navigate }) {
   const initialForm = {
@@ -16,6 +17,7 @@ export default function ConsultationPage({ navigate }) {
   const [form, setForm] = useState(initialForm);
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState("");
 
   const getMinAppointmentDate = () => {
     const today = new Date();
@@ -102,8 +104,13 @@ export default function ConsultationPage({ navigate }) {
       alert("Please select a present or future appointment date");
       return;
     }
-
+    if (!turnstileToken) {
+      alert("Please complete the security verification.");
+      return;
+    }
     setLoading(true);
+
+
 
     try {
       const response = await fetch(
@@ -307,6 +314,21 @@ export default function ConsultationPage({ navigate }) {
                       placeholder="Any details you'd like Dr. Arvind to know before the consultation..."
                     />
                   </div>
+                </div>
+
+                <div style={{ margin: "1.5rem 0" }}>
+                  <Turnstile
+                    sitekey="0x4AAAAAAD6e8D6y7zpusrOD"
+                    onSuccess={(token) => {
+                      setTurnstileToken(token);
+                    }}
+                    onExpire={() => {
+                      setTurnstileToken("");
+                    }}
+                    onError={() => {
+                      setTurnstileToken("");
+                    }}
+                  />
                 </div>
 
                 <button
