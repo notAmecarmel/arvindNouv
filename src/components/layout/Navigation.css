@@ -201,6 +201,25 @@
   color: var(--gold);
 }
 
+@media (min-width: 768px) and (max-width: 1024px) {
+  .nav-inner {
+    padding: 1.2rem 1.6rem;
+  }
+
+  .nav-logo-name {
+    font-size: 1rem;
+  }
+
+  .nav-logo-title {
+    font-size: 0.66rem;
+  }
+
+  .nav-link {
+    font-size: 0.82rem;
+    letter-spacing: 0.13em;
+  }
+}
+
 @media (max-width: 900px) {
   .nav-links,
   .nav-cta {

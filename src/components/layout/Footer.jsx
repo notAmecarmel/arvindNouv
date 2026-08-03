@@ -113,6 +113,28 @@ export default function Footer({ navigate }) {
           border: 1px solid rgba(212,204,184,0.18);
         }
 
+        @media (min-width: 768px) and (max-width: 1024px) {
+          .footer-grid {
+            grid-template-columns: 1.2fr 1fr;
+            gap: 2.2rem;
+          }
+
+          .footer-grid > div:first-child {
+            grid-column: 1 / -1;
+            max-width: 560px;
+          }
+
+          .footer-bottom {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+          }
+
+          .footer-certifications {
+            flex-wrap: wrap;
+          }
+        }
+
         @media (max-width: 900px) {
           .footer-grid {
             grid-template-columns: 1fr 1fr;

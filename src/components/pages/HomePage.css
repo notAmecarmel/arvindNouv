@@ -198,7 +198,11 @@
   .hero{
     min-height:100vh;
     padding-top:90px;
-    align-items:center;
+    padding-bottom:11rem;
+    align-items:flex-start;
+    justify-content:flex-start;
+    display:flex;
+    flex-direction:column;
   }
 
   .hero-offset-container{
@@ -207,125 +211,187 @@
   }
 
   .hero-content{
-
-    max-width:620px;
-
+    max-width:640px;
     padding-left:48px;
     padding-right:48px;
-
-    padding-bottom:180px;
-
-    margin-top:-40px;
+    padding-bottom:0;
+    margin-top:0;
+    order:1;
   }
 
   .hero-eyebrow{
-
     font-size:.72rem;
-
     margin-bottom:1.25rem;
-
     letter-spacing:.18em;
   }
 
   .hero-eyebrow::before{
-
     width:32px;
   }
 
   .hero-title{
-
-    font-size:clamp(3.8rem,6vw,4.8rem);
-
+    font-size:clamp(3rem, 5vw, 4.2rem);
     line-height:.95;
-
     margin-bottom:1.2rem;
   }
 
   .hero-subtitle{
-
-    font-size:1.15rem;
-
+    font-size:1.02rem;
     max-width:500px;
-
     margin-bottom:2rem;
   }
 
   .hero-actions{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:0.85rem;
+  }
 
-    gap:1rem;
+  .hero-actions .btn{
+    width:100%;
+    max-width:280px;
+    justify-content:center;
   }
 
   /* ---------------- Background Image ---------------- */
 
   .hero-photo-area{
-
-    width:100%;
-
-    opacity:.14;
-
+    position:relative;
+    width:min(88%, 440px);
+    height:320px;
+    margin:2rem auto 0;
+    opacity:.18;
     pointer-events:none;
   }
 
   .hero-photo-placeholder{
-
-    background-size:34%,cover;
-
-    background-position:92% center;
+    background-size:44%,cover;
+    background-position:55% center;
   }
 
   .hero-photo-overlay{
-
     background:linear-gradient(
-      to right,
-      rgba(26,26,24,.95) 0%,
-      rgba(26,26,24,.82) 42%,
-      rgba(26,26,24,.35) 70%,
-      transparent 100%
+      180deg,
+      rgba(26,26,24,.08) 0%,
+      rgba(26,26,24,.42) 100%
     );
   }
 
   /* ---------------- Credentials ---------------- */
 
   .hero-credentials-bar{
-
     display:grid;
-
     grid-template-columns:repeat(3,minmax(0,1fr));
-
     row-gap:18px;
-
     column-gap:18px;
-
     padding:22px 28px;
-
     overflow:visible;
-
     align-items:start;
   }
 
   .hero-credentials-bar > div{
-
     width:100%;
   }
 
   .cred-item{
-
     white-space:normal;
   }
 
   .cred-value{
-
     font-size:.82rem;
   }
 
   .cred-label{
-
     font-size:.64rem;
   }
 
   .cred-sep{
-
     display:none;
+  }
+
+  /* ---------------- Intro ---------------- */
+
+  .intro-section{
+    padding:6.5rem 0;
+  }
+
+  .intro-grid{
+    grid-template-columns:1fr;
+    gap:3rem;
+  }
+
+  .intro-image-frame{
+    max-width:480px;
+    margin:0 auto;
+  }
+
+  .intro-image-frame::before{
+    top:-1rem;
+    left:-1rem;
+    right:1rem;
+    bottom:1rem;
+  }
+
+  .intro-signature{
+    font-size:clamp(1.7rem, 3vw, 2.1rem);
+  }
+
+  .intro-body{
+    font-size:1rem;
+    max-width:680px;
+  }
+
+  .intro-philosophy{
+    padding:1.25rem 1.5rem;
+  }
+
+  /* ---------------- Expertise ---------------- */
+
+  .expertise-grid{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    gap:1.25rem;
+  }
+
+  /* ---------------- Experience ---------------- */
+
+  .experience-section{
+    padding:6.5rem 0;
+  }
+
+  .experience-grid{
+    grid-template-columns:1fr;
+    gap:3rem;
+  }
+
+  .experience-steps{
+    gap:1.75rem;
+    margin-top:2.25rem;
+  }
+
+  .exp-step{
+    gap:1rem;
+  }
+
+  /* ---------------- Stats ---------------- */
+
+  .trust-stats-section{
+    padding:5.5rem 0;
+  }
+
+  .trust-stats-grid{
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+    gap:1rem;
+  }
+
+  /* ---------------- Testimonials ---------------- */
+
+  .testimonials-section{
+    padding:6rem 0;
+  }
+
+  .testimonials-grid{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    gap:1rem;
   }
 
 }
