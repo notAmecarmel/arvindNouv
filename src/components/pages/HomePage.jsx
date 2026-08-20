@@ -106,21 +106,21 @@ function SurgeonIntro({ navigate }) {
             </div>
             <ul style={{ margin: 0, paddingLeft: "1.15rem", fontFamily: "var(--font-sans)", fontSize: "0.95rem", lineHeight: 1.8, color: "var(--stone-dark)" }}>
               <li>BDS & MDS — Kamineni Institute of Dental Sciences</li>
-              <li>Fellowship (RGUHS) — Rajiv Gandhi University of Health Sciences</li>
-              <li>Oncology Fellowship — HCG Cancer Hospital, Bengaluru</li>
-              <li>Fellowship — Royal College of Surgeons (RCS), London</li>
+              <li>Fellowship in Oral Oncosurgery — HCG Cancer Hospital, Bengaluru</li>
+              <li>Senior Clinical Fellow — RCS London</li>
+              <li>Memberships — AOMSI, FHNO, DCI registered</li>
             </ul>
 
             <p className="intro-body">
-              With over four years of surgical practice, Dr. B. Arvind is recognised among India's foremost maxillofacial surgeons — trained in India with oncology and international fellowship experience.
+              Dr. B. Arvind is a Consultant Oral & Maxillofacial Oncosurgeon with over four years of clinical practice in Oral and Head & Neck cancer surgery, Maxillofacial trauma & reconstruction, Orthognathic surgery and precision oral surgery.
             </p>
 
             <div className="intro-philosophy">
-              "Every face tells a story. My role is to restore what belongs there — function, symmetry, and the quiet confidence that comes with it."
+              "My foremost commitment is to my patients — to offer clear communication, honest advice, and evidence based surgical care only when it is truly in their best interest, with the goal of restoring health, function, and quality of life."
             </div>
 
             <p className="intro-body">
-              His practice spans complex jaw reconstruction, facial trauma, TMJ disorders, and surgical facial aesthetics — approached with the precision of a specialist and the empathy of a physician.
+              His practice focuses on surgical planning, primary resection of oral and head and neck tumours, neck dissections, reconstructive procedures, orthognathic surgery, maxillofacial trauma care, implant surgery, and minor oral surgical procedures.
             </p>
 
             <button className="btn btn--primary" onClick={() => navigate("/about")}

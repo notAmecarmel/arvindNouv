@@ -31,10 +31,6 @@ function Biography() {
               <div className="bio-image">
                 <img className="bio-image__img" src={hero2} alt="Portrait of Dr. B. Arvind" />
               </div>
-              <div className="degree-card">
-                <div className="degree-title">BDS · MDS</div>
-                <div className="degree-meta">RGUHS · HCG Bengaluru · RCS London</div>
-              </div>
             </div>
 
             <div className="bio-affiliation">
@@ -58,10 +54,10 @@ function Biography() {
             </h2>
 
             {[
-              "Dr. B. Arvind is a dedicated Oral and Maxillofacial Surgeon based at PACE Hospitals, Hyderabad. His practice focuses on oncology, facial reconstruction, trauma, TMJ disorders, and precision oral surgery.",
-              "He completed his BDS and MDS at Kamineni Institute of Dental Sciences and went on to pursue a fellowship with Rajiv Gandhi University of Health Sciences (RGUHS). Further oncology training at HCG Cancer Hospital, Bengaluru deepened his expertise in oral cancer management.",
-              "An international fellowship at the Royal College of Surgeons (RCS), London broadened his surgical perspective and reinforced his commitment to contemporary, evidence-based care.",
-              "Dr. Arvind's philosophy is built on surgical restraint, clear communication, and treating every patient as a partner in their care. He prioritises outcomes that restore function and confidence while respecting the patient's individual needs.",
+              "Dr. B. Arvind is a dedicated Oral and Maxillofacial Oncosurgeon at PACE Hospitals, Hyderabad. His practice focuses on Oral and Head and Neck Oncology, Maxillofacial trauma, Facial reconstruction, Orthognathic surgery, TMJ disorders, and Precision oral surgery.",
+              "He completed his BDS and MDS in Oral and Maxillofacial Surgery at Kamineni Institute of Dental Sciences, followed by a Fellowship in Oral Oncosurgery at HCG Cancer Hospital, Bengaluru, affiliated with Rajiv Gandhi University of Health Sciences (RGUHS), where he gained extensive exposure to the surgical management of oral and head and neck cancers.",
+              "Dr. Arvind is committed to delivering evidence based, patient centred care with an emphasis on precise surgical planning, functional rehabilitation, and long-term outcomes. His approach is founded on clear communication, surgical precision, and compassionate care, ensuring that every patient is actively involved in their treatment journey.",
+              '"My foremost commitment is to my patients — to offer clear communication, honest advice, and evidence based surgical care only when it is truly in their best interest, with the goal of restoring health, function, and quality of life."',
             ].map((para, i) => (
               <p key={i} style={{
                 fontFamily: "var(--font-serif)",
@@ -93,16 +89,15 @@ function Credentials() {
       title: "Education & Training",
       items: [
         { label: "BDS & MDS", detail: "Kamineni Institute of Dental Sciences" },
-        { label: "Fellowship (RGUHS)", detail: "Rajiv Gandhi University of Health Sciences" },
-        { label: "Oncology Fellowship", detail: "HCG Cancer Hospital, Bengaluru" },
-        { label: "Fellowship", detail: "Royal College of Surgeons (RCS), London" },
+        { label: "Fellowship in Oral Oncosurgery", detail: "HCG Cancer Hospital, Bengaluru" },
+        { label: "Senior Clinical Fellow", detail: "RCS London" },
       ],
     },
     {
       title: "Memberships",
       items: [
-        { label: "AOMSI", detail: "Association of Oral and Maxillofacial Surgeons of India" },
-        { label: "IAOMFS", detail: "International Association of OMFS" },
+        { label: "AOMSI", detail: "Association of Oral & Maxillofacial Surgeons of India" },
+        { label: "FHNO", detail: "Foundation for Head and Neck Oncology" },
         { label: "DCI Registered", detail: "Dental Council of India" },
       ],
     },
@@ -146,20 +141,19 @@ function Publications() {
           {[
             {
               title: "Clinical Focus",
-              content: "Dr. B Arvind is a Consultant Oral & Maxillofacial Oncosurgeon with over nine years of clinical practice in oral cancer surgery, complex jaw procedures, facial trauma, and maxillofacial reconstruction.",
-            },
-            {
-              title: "Watch the Surgeon",
-              video: true,
-              src: "https://www.youtube.com/embed/ZMLJtDI3-Ac",
+              content: "Dr. B Arvind is a Consultant Oral & Maxillofacial Oncosurgeon with over four years of clinical practice in Oral and Head & Neck cancer surgery, Maxillofacial trauma & reconstruction, Orthognathic surgery and precision oral surgery.",
             },
             {
               title: "Practice Scope",
-              content: "His practice focuses on surgical planning, primary resections, neck dissections, reconstructive procedures, orthognathic surgery, trauma care, implant-related surgery, and minor oral surgical procedures. His RCS London Fellowship credential is mentioned as a professional surgical qualification and does not imply physical study or training in London.",
+              content: "His practice focuses on surgical planning, primary resection of Oral and Head and Neck Tumours, Neck dissections, Reconstructive procedures, Orthognathic surgery, Maxillofacial trauma care, Implant surgery, and Minor Oral surgical procedures.",
             },
             {
               title: "Consultations & Care",
-              content: "Dr. Arvind is available for clinic consultations at the Nalgonda branch from 6:30 PM to 9 PM, Monday to Saturday. Hospital consultations and surgical care are scheduled at PACE Hospitals from 9 AM to 6 PM, Monday to Saturday.",
+              content: "Dr. Arvind is available for hospital consultations and surgical care at PACE Hospitals, Hitech-city from 9:00 AM to 6:00 PM, Monday to Saturday. He also consults at the Nallagandla Clinic from 6:30 PM to 9:00 PM, Monday to Saturday.",
+            },
+            {
+              title: "Patient-Centred Philosophy",
+              content: '"My foremost commitment is to my patients — to offer clear communication, honest advice, and evidence based surgical care only when it is truly in their best interest, with the goal of restoring health, function, and quality of life."',
             },
           ].map((card, i) => {
             const isVideo = card.video;

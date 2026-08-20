@@ -101,44 +101,16 @@ const EXPERTISE_AREAS = [
     title: "Oncology",
     subtitle: "Management Of Head & Neck Cancers",
     paragraphs: [
-      "Oral cancer arises in the tissues of the mouth, including the tongue, cheeks, gums, floor of the mouth, and lips. It may present as a non-healing ulcer, lump, or white/red patch, and early detection plays a critical role in successful treatment.",
-      "Dr. Arvind offers a comprehensive management of oral cancer, combining precise surgical care with functional restoration.",
+      "Oral and Head and Neck cancers can affect the Lips, Tongue, Cheeks, Gums, Floor of the mouth, Jaw, Salivary glands, Throat, Voice box and other structures of the Head and Neck region. They may present as a non-healing ulcer, persistent lump or swelling, difficulty swallowing, hoarseness of voice, or white or red patches in the mouth. Early diagnosis and timely treatment are essential for achieving the best outcomes.",
+      "Dr. Arvind provides evidence based surgical management of Oral and Head and Neck Cancers with a focus on complete tumour removal, functional preservation, and quality of life. Each treatment plan is tailored to the patient’s diagnosis, stage of disease, and individual needs.",
     ],
     list: [
-      "Early diagnosis and staging through clinical evaluation and biopsy.",
-      "Oncologic surgery with complete tumor removal.",
-      "Neck dissection for lymph node management.",
-      "Reconstructive surgery to restore form and function.",
-      "Post-treatment rehabilitation through speech and swallow therapy.",
-    ],
-  },
-  {
-    title: "Salivary gland tumours",
-    subtitle: "Management OF Salivary gland tumours",
-    paragraphs: [
-      "Salivary glands comprises of major and minor salivary glands with the major glands situated in the Cheek, floor of the mouth and neck. Most of the lesions affecting the salivary gland are benign, often presenting as a swelling near the ear, jaw or inside of the mouth.",
-      "Dr. Arvind specializes in the evaluation and surgical management of salivary gland tumours, with a focus on safety, precision, and functional preservation.",
-    ],
-    list: [
-      "Accurate diagnosis using clinical assessment, imaging, and biopsy.",
-      "Surgical excision tailored to the type and location of the tumour.",
-      "Facial nerve preservation in parotid surgeries.",
-      "Management of malignant tumours with multidisciplinary care.",
-      "Reconstruction and rehabilitation when required.",
-    ],
-  },
-  {
-    title: "Neck masses and Lymph node biopsy",
-    paragraphs: [
-      "Neck masses are common and may arise from infections, benign growths, or cancers. A persistent or enlarging neck swelling requires timely evaluation to determine its cause.",
-      "Dr. Arvind provides comprehensive evaluation and management of neck masses, with a focus on accurate diagnosis and appropriate treatment.",
-    ],
-    list: [
-      "Clinical assessment and imaging to identify the nature of the swelling.",
-      "Ultrasound-guided FNAC / biopsy for definitive diagnosis.",
-      "Excisional biopsy when indicated.",
-      "Management of enlarged lymph nodes, including cancer-related cases.",
-      "Neck dissection for advanced or malignant conditions.",
+      "Early diagnosis and staging through comprehensive clinical evaluation, imaging, and biopsy.",
+      "Primary tumour resection using established oncologic principles.",
+      "Neck dissection for the management of cervical lymph node disease.",
+      "Reconstructive surgery to restore speech, swallowing, appearance, and function.",
+      "Multidisciplinary rehabilitation, including speech and swallow therapy.",
+      "Long-term surveillance and follow-up for early detection of recurrence and functional recovery.",
     ],
   },
   {
@@ -172,15 +144,15 @@ const EXPERTISE_AREAS = [
   {
     title: "Management of Benign Pathologies of Head and Neck region",
     paragraphs: [
-      "Benign (non-cancerous) conditions of the head and neck include a wide range of swellings and lesions affecting the oral cavity, jaw bones, and soft tissues. While not malignant, these conditions can grow, cause discomfort, or affect function if left untreated.",
-      "Dr. Arvind provides comprehensive management of benign head & neck pathologies, with a focus on precise diagnosis and effective treatment.",
+      "Benign (non-cancerous) conditions of the Head and Neck include a wide range of swellings and lesions affecting the Oral cavity, Salivary glands, Throat, Voice box and surrounding soft tissues. Although these conditions are not cancerous, they may enlarge over time, cause pain, interfere with function, or result in facial asymmetry if left untreated.",
+      "Dr. Arvind offers expert, evidence based surgical management of benign head and neck conditions, with a focus on accurate diagnosis, meticulous surgical planning, and treatment that preserves both function and aesthetics. Every treatment plan is tailored to the patient's diagnosis, symptoms, and individual needs.",
     ],
     list: [
-      "Clinical evaluation and imaging for accurate diagnosis.",
-      "Biopsy when indicated to confirm the nature of the lesion.",
-      "Surgical excision of benign tumors and soft tissue lesions.",
-      "Management of jaw cysts and tumors (odontogenic cysts, benign jaw tumors).",
-      "Minimally invasive techniques wherever appropriate.",
+      "Comprehensive clinical evaluation and advanced imaging for accurate diagnosis.",
+      "Biopsy when indicated to establish a definitive diagnosis.",
+      "Surgical excision of benign soft tissue lesions and tumours.",
+      "Management of odontogenic cysts, jaw cysts, and benign jaw tumours.",
+      "Minimally invasive surgical techniques whenever appropriate to promote faster recovery and optimal functional outcomes.",
     ],
   },
   {

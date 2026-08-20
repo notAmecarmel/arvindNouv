@@ -163,7 +163,7 @@ export default function Footer({ navigate }) {
                 "Precision in every procedure. Humanity in every consultation."
               </p>
               <div style={{ marginTop: "2rem", display: "flex", gap: "1rem" }}>
-                {["DCI", "AOMSI", "IAOMFS"].map(b => (
+                {["DCI", "AOMSI", "FHNO"].map(b => (
                   <span key={b} className="cert-badge">{b}</span>
                 ))}
               </div>
@@ -194,8 +194,6 @@ export default function Footer({ navigate }) {
               <ul className="footer-links">
                 {[
                   { label: "Oncology — Oral Cancer Management", section: "oncology" },
-                  { label: "Salivary Gland Tumours", section: "salivary-gland-tumours" },
-                  { label: "Neck Masses & Lymph Node Biopsy", section: "neck-masses-and-lymph-node-biopsy" },
                   { label: "Orthognathic (Jaw) Surgery", section: "orthognathic-surgery" },
                   { label: "Maxillofacial Trauma", section: "maxillofacial-trauma" },
                   { label: "Benign Head & Neck Pathologies", section: "management-of-benign-pathologies-of-head-and-neck-region" },
