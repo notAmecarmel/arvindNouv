@@ -87,6 +87,16 @@ export default function Navigation({ currentPath, navigate }) {
         </div>
 
         <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
+          <button
+            type="button"
+            className="mobile-menu-close"
+            onClick={() => setMenuOpen(false)}
+            aria-label="Close navigation menu"
+          >
+            <span />
+            <span />
+          </button>
+
           {NAV_LINKS.map(({ label, path }) => (
             <span
               key={path}
