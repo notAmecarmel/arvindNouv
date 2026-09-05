@@ -147,6 +147,7 @@
   padding: 1.25rem 2.5rem;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 3rem;
   overflow-x: auto;
   z-index: 5;
@@ -158,6 +159,7 @@
   gap: 0.2rem;
   white-space: nowrap;
   flex-shrink: 0;
+  align-items: center;
 }
 
 .cred-value {
@@ -302,10 +304,13 @@
     padding:22px 28px;
     overflow:visible;
     align-items:start;
+    justify-items:center;
   }
 
   .hero-credentials-bar > div{
     width:100%;
+    display:flex;
+    justify-content:center;
   }
 
   .cred-item{
@@ -442,6 +447,9 @@
   }
   .hero-credentials-bar {
     gap: 1.5rem;
+  }
+  .hero-credentials-bar {
+    justify-content: center;
   }
   .hero-offset-container {
     margin-left: 0;

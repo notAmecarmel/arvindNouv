@@ -57,14 +57,14 @@ function Hero({ navigate }) {
           { value: "100+", label: "Procedures" },
           { value: "PACE Hospitals, Hyderabad", label: "Hospital Affiliation" },
           { value: "RCS London", label: "Fellowship" },
-          { value: "40+", label: "Publications" },
-        ].map((item, i) => (
+          { value: "DCI Registered", label: "Dental Council of India" },
+        ].map((item, i, arr) => (
           <div key={i} style={{ display: "flex", alignItems: "center", gap: "3rem" }}>
             <div className="cred-item">
               <span className="cred-value">{item.value}</span>
               <span className="cred-label">{item.label}</span>
             </div>
-            {i < 5 && <div className="cred-sep" />}
+            {i < arr.length - 1 && <div className="cred-sep" />}
           </div>
         ))}
       </div>
