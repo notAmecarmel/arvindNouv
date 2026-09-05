@@ -400,7 +400,7 @@ export default function ConsultationPage({ navigate }) {
                 Prefer to message first? Our care team responds on WhatsApp.
               </div>
               <a
-                href="https://wa.me/918331003232"
+                href="https://wa.me/9000769847"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn--outline"
